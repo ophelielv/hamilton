@@ -1,0 +1,39 @@
+:root{
+  --ham-bg-gradient: #fcbf31;
+  --color-brick: #b9a183;
+  --color-sky: #a3d8df;
+  --color-par: #82828a;
+  /* --color-road: #7e7c89; */
+  --color-sideway: #dfcdb7;
+}
+
+.container {
+  width: 800px;
+  height: 800px;
+  background-color: var(--color-sky);
+  position: relative;
+}
+
+.road {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 135px solid var(--color-par);
+  border-left: 500px solid transparent;
+  opacity: 50%;
+}
+
+.sideway{
+  height: 0px;
+    width: 525px;
+    position: absolute;
+    bottom: 47px;
+    right: -18px;
+    border-top: 45px solid var(--color-sideway);
+    border-left: 171px solid transparent;
+    border-right: 12px solid transparent;
+    transform: rotate(-15deg);
+    opacity: 57%;
+}
