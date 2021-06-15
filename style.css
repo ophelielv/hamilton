@@ -4,10 +4,19 @@
   --color-sky: #a3d8df;
   --color-par: #82828a;
   /* --color-road: #7e7c89; */
+  --color-grey-wall1: #d9d8dc;
+  --color-grey-wall2: #cbc9cf;
+  --color-grey-wall3: #7e7e88;
+  --color-brick-wall1: #c2c1c0;
+  --color-brick-wall2: #9c8d77;
   --color-sideway1: #e5d9cd;
   --color-sideway2: #dfcdb7;
   --color-sideway-left-side: #e5d9cd;/*#ebe2d7;*/
-  --color-sideway-line: #463d3d;
+  --color-line1: #463d3d;
+  --color-line2: #9e8a77;
+  --color-line3: #5f5f5f;
+  --height-sideway-left-side: 45px;
+  --border-width-front-wall: 2px;
 }
 
 .container {
@@ -24,6 +33,51 @@
   
 }
 
+/* ********************************* BUILDINGS ********************************* */
+/* ***** Building one ***** */
+/* Front wall */
+.front-wall div{
+  height: calc(100% - var(--height-sideway-left-side) - var(--border-width-front-wall));
+  position: absolute;
+  top:0;
+  border-bottom: var(--border-width-front-wall) solid var(--color-line1);
+  
+}
+.front-wall > .grey-wall {
+  width: 199px;
+  left: 0;
+  background: linear-gradient(
+    87deg,
+    var(--color-grey-wall2) 0%,
+    var(--color-grey-wall1) 33%, 
+    var(--color-grey-wall2) 55%, 
+    var(--color-grey-wall3) 100%
+  );
+  border-right: 1px solid var(--color-line3);
+}
+.front-wall > .brick-wall {
+  width: 87px;
+  left: 200px;
+  background: linear-gradient(90deg, var(--color-brick-wall1) 0%, var(--color-brick-wall2) 100%);
+  border-right:  2px solid var(--color-line3);
+}
+.front-wall > .lines-vertical > div {
+  height: 100%;
+  position: absolute;
+}
+.front-wall > .lines-vertical > .line-vertical-1 {
+  height: 240px;
+  top: 510px;
+  left: 150px;
+  border-left: 2px solid var(--color-line3);
+}
+.front-wall > .lines-vertical > .line-vertical-2 {
+  height: 100%;
+  top: 0;
+  left: 196px;
+  border-left: 2px solid var(--color-line1);
+  opacity: 0.4;
+}
 /* ********************************* ROAD ********************************* */
 .road {
  /* background-color: violet; */
@@ -39,7 +93,6 @@
   border-bottom: 135px solid var(--color-par);
   border-left: 500px solid transparent;
 }
-
 .line-middle-par {
   height: 0px;
   width: 185px;
@@ -52,7 +105,7 @@
 
 /* ***** Sideway ***** */
 .road .left-side{
-  height: 45px;
+  height: var(--height-sideway-left-side);
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -65,9 +118,8 @@
     var(--color-sideway-left-side) 80%,
     var(--color-sideway1) 100% 
   );
-  border-top: 1px dotted var(--color-sideway-line);
+  border-top: 1px dotted var(--color-line1);
 }
-
 .middle-sideway{
   height: 0px;
   width: 525px;
@@ -83,7 +135,6 @@
   transform: rotate(-15deg);
   /* opacity: 57%; */
 }
-
 .lines-sideway > div {
   height: 0px;
   position: absolute;
@@ -92,33 +143,33 @@
   width: 700px;
   bottom: 44px;
   right: -10px;
-  border-bottom: 2px groove var(--color-sideway-line);
+  border-bottom: 2px groove var(--color-line1);
   opacity: 0.3;
 }
 .line-sideway-1 { 
   width: 555px;
   bottom: 7px;
   right: -2px;
-  border-bottom: 1px groove var(--color-sideway-line);
+  border-bottom: 1px groove var(--color-line1);
   opacity: 0.5;
 }
 .line-sideway-2 { 
   width: 535px;
   bottom: 2px;
   right: 0px;
-  border-bottom: 1px groove var(--color-sideway-line);
+  border-bottom: 1px groove var(--color-line1);
   opacity: 0.5;
 }
 .line-sideway-3 { 
   width: 520px;
   bottom: -1px;
   right: 2px;
-  border-bottom: 1px solid var(--color-sideway-line); 
+  border-bottom: 1px solid var(--color-line1); 
 }
 .line-sideway-4 { 
   width: 510px;
   bottom: -4px;
   right: 2px;
-  border-bottom: 2px solid var(--color-sideway-line);
+  border-bottom: 2px solid var(--color-line1);
   opacity: 0.7;
 }
