@@ -17,6 +17,15 @@
   --color-line3: #5f5f5f;
   --height-sideway-left-side: 45px;
   --border-width-front-wall: 2px;
+  --height-front-poster: 480px;
+  --width-front-poster: 280px;
+
+  --stripe: #cfd8dc;
+  --bg: #e1e1e1;
+}
+
+body {
+  background: #3f3f44;
 }
 
 .container {
@@ -35,13 +44,12 @@
 
 /* ********************************* BUILDINGS ********************************* */
 /* ***** Building one ***** */
-/* Front wall */
-.front-wall div{
+/* ** Front wall ** */
+.front-wall > .grey-wall, .front-wall > .brick-wall{
   height: calc(100% - var(--height-sideway-left-side) - var(--border-width-front-wall));
   position: absolute;
   top:0;
   border-bottom: var(--border-width-front-wall) solid var(--color-line1);
-  
 }
 .front-wall > .grey-wall {
   width: 199px;
@@ -66,8 +74,8 @@
   position: absolute;
 }
 .front-wall > .lines-vertical > .line-vertical-1 {
-  height: 240px;
-  top: 510px;
+  height: 255px;
+  top: 500px;
   left: 150px;
   border-left: 2px solid var(--color-line3);
 }
@@ -77,6 +85,82 @@
   left: 196px;
   border-left: 2px solid var(--color-line1);
   opacity: 0.4;
+}
+/* ** Left poster & structure ** */
+/* Structure */
+.front-wall .poster-container{
+  height: var(--height-front-poster);
+  width: var(--width-front-poster);
+  z-index: 1;
+  top: 40px;
+  position: absolute;
+  transform: rotate(-0.3deg);
+}
+.front-wall .poster-container > .iron-structure{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 1px solid transparent;
+  border-top: 4px solid var(--color-line3);
+  border-bottom: 6px solid var(--color-line3);
+}
+.front-wall .poster-container > .iron-structure > div[class^="zig-zag-"] {
+  position: absolute;
+  height: 20px;
+  width: 1px;
+  background: transparent;
+  bottom: 0;
+}
+.front-wall .poster-container > .iron-structure > .line-bottom-iron-structure{
+  border-bottom: 2px solid black;
+  position: relative;
+  top: calc(var(--height-front-poster) + 5px);
+}
+.front-wall .poster-container > .iron-structure > .zig-zag-down{
+  transform: skew(36deg);
+  border-right: 1px solid black;
+  border-left: 3px solid var(--color-line1);
+}
+.front-wall .poster-container > .iron-structure > .zig-zag-up{
+  transform: skew(-25deg);
+  border-right: 3px solid var(--color-line1);
+  border-left: 1px solid black;
+}
+.front-wall .poster-container > .iron-structure > .zig-zag-0{ left: 8px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-1.zig-zag-up{ left: 48px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-1.zig-zag-down{ left: 66px;}
+.front-wall .poster-container > .iron-structure > .zig-zag-2.zig-zag-up{ left: 98px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-2.zig-zag-down{ left: 116px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-3.zig-zag-up{ left: 140px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-3.zig-zag-down{ left: 156px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-4.zig-zag-up{ left: 185px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-4.zig-zag-down{ left: 201px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-5.zig-zag-up{ left: 230px; }
+.front-wall .poster-container > .iron-structure > .zig-zag-5.zig-zag-down{ left: 246px; }
+.front-wall .poster-container > .iron-structure > div[class^="vertical-"] {
+  position: absolute;
+  height: 10px;
+  width: 1px;
+  background: transparent;
+  top: 0px;
+  border-right: 3px solid var(--color-line1);
+  border-left: 1px solid black;
+}
+.front-wall .poster-container > .iron-structure > .vertical-1 { left: 3px; }
+.front-wall .poster-container > .iron-structure > .vertical-2 { left: 56px; }
+.front-wall .poster-container > .iron-structure > .vertical-3 { left: 116px; }
+.front-wall .poster-container > .iron-structure > .vertical-4 { left: 181px; }
+.front-wall .poster-container > .iron-structure > .vertical-5 { left: 245px; }
+/* Poster */
+.front-wall .poster-container > .poster{
+  height: calc(100% - 30px);
+  width: calc(100% - 20px);
+  margin: 10px 20px 20px 0px;
+  position: absolute;
+  top: 0;
+  border-radius: 4px;
+  border: 2px double var(--color-line3);
+  background: gold;
 }
 /* ********************************* ROAD ********************************* */
 .road {
