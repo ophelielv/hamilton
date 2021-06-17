@@ -7,7 +7,6 @@
   --color-brick: #b9a183;
   --color-sky: #a3d8df;
   --color-par: #82828a;
-  /* --color-road: #7e7c89; */
   --color-grey-wall1: #d9d8dc;
   --color-grey-wall2: #cbc9cf;
   --color-grey-wall3: #7e7e88;
@@ -15,7 +14,7 @@
   --color-brick-wall2: #9c8d77;
   --color-sideway1: #e5d9cd;
   --color-sideway2: #dfcdb7;
-  --color-sideway-left-side: #e5d9cd;/*#ebe2d7;*/
+  --color-sideway-left-side: #e5d9cd;
   --color-line1: #463d3d;
   --color-line2: #9e8a77;
   --color-line3: #5f5f5f;
@@ -169,12 +168,20 @@ body {
   top: 0;
   border-radius: 4px;
   border: 2px double var(--color-line3);
-  background: gold;
+  background: radial-gradient(
+    farthest-corner at 40px 265px, 
+    var(--background-gold1) 0%, 
+    var(--background-gold2) 57%,
+    var(--background-gold3) 94%,
+    var(--background-gold1) 100%
+  );
+  box-shadow: inset -23px -8px 28px -9px var(--background-gold1);
 }
+
 .front-wall .poster > .star{
   position: absolute;
-  top: 195px;
-  left: 18px;
+  top: 242px;
+  left: 12px;
   width: 0px;
   height: 0px;
   border-right: 125px solid transparent;
