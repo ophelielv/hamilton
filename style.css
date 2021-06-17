@@ -1,5 +1,9 @@
 :root{
   --ham-bg-gradient: #fcbf31;
+  --background-gold1: #af6d2f;
+  --background-gold2: #f09931;
+  --background-gold2: #ffc54f;
+  --background-gold3: #fcda4b;
   --color-brick: #b9a183;
   --color-sky: #a3d8df;
   --color-par: #82828a;
@@ -15,6 +19,8 @@
   --color-line1: #463d3d;
   --color-line2: #9e8a77;
   --color-line3: #5f5f5f;
+  --color-star-grey: #2c2e31;
+  --color-star-black: #222127;
   --height-sideway-left-side: 45px;
   --border-width-front-wall: 2px;
   --height-front-poster: 480px;
@@ -62,12 +68,15 @@ body {
     var(--color-grey-wall3) 100%
   );
   border-right: 1px solid var(--color-line3);
+  box-shadow: inset 8px 5px 20px 0px var(--color-line3);
 }
 .front-wall > .brick-wall {
   width: 87px;
   left: 200px;
   background: linear-gradient(90deg, var(--color-brick-wall1) 0%, var(--color-brick-wall2) 100%);
   border-right:  2px solid var(--color-line3);
+  box-shadow: inset -11px 0px 20px 4px var(--color-line1),
+    inset -3px 0px 8px 4px var(--color-grey-wall3);
 }
 .front-wall > .lines-vertical > div {
   height: 100%;
@@ -162,6 +171,42 @@ body {
   border: 2px double var(--color-line3);
   background: gold;
 }
+.front-wall .poster > .star{
+  position: absolute;
+  top: 195px;
+  left: 18px;
+  width: 0px;
+  height: 0px;
+  border-right: 125px solid transparent;
+  border-bottom: 87px solid var(--color-star-black);
+  border-left: 125px solid transparent;
+  transform: rotate(35deg);
+  border-radius: 8px;
+}
+.front-wall .poster > .star:before{
+  position: absolute;
+  top: 6px;
+  left: -134px;
+  width: 0px;
+  height: 0px;
+  border-right: 125px solid transparent;
+  border-bottom: 87px solid var(--color-star-black);
+  border-left: 125px solid transparent;
+  transform: rotate(-70deg);
+  content: '';
+  border-radius: 8px;
+}
+.front-wall .poster > p.hamilton{
+  color: white;
+  text-transform: uppercase;
+  z-index: 2;
+  position: absolute;
+  top: 242px;
+  font-size: 20px;
+  left: 76px;
+  text-shadow:  3px 8px 15px #888787, -20px -10px 20px #968282, 20px 20px 15px #505050;
+}
+
 /* ********************************* ROAD ********************************* */
 .road {
  /* background-color: violet; */
