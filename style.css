@@ -28,8 +28,8 @@
   --height-front-poster: 480px;
   --width-front-poster: 280px;
 
-  --stripe: #cfd8dc;
-  --bg: #e1e1e1;
+  /* --stripe: #cfd8dc;  */
+  /* --bg: #e1e1e1; */
 }
 
 body{
@@ -47,10 +47,33 @@ body{
 /* ********************************* BUILDINGS ********************************* */
 /* ***** Building one ***** */
 /* ** Front wall ** */
-.building-one > .front-wall {
-  height: 400px;
-  width: 300px;
+.buildings .perspective{
+  transform-origin: 100% 0;
+  transform: skewY(25deg);
+}
+.building-one > .front-wall{
+  width: 292px;
+  height: 770px;
   background: var(--color-b1-front-wall1);
+  position: absolute;
+  top: 125px;
+  left: 289px;
+}
+.building-two{
+  height: 662px;
+  width: 90px;
+  background: var(--color-b1-grey-wall3);
+  position: absolute;
+  top: 55px;
+  right: 130px;
+}
+.building-three{
+  height: 499px;
+  width: 130px;
+  background: var(--color-b1-front-wall2);
+  position: absolute;
+  top: 220px;
+  right: 0px;
 }
 /* ** Side wall ** */
 .building-one > .side-wall > .grey-wall, .building-one > .side-wall > .brick-wall{
