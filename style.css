@@ -54,11 +54,11 @@ body{
 }
 .building-one > .front-wall{
   width: 292px;
-  height: 770px;
+  height: 768px;
   background: var(--color-b1-front-wall1);
   border: 1px solid var(--color-line3);
   position: absolute;
-  top: 125px;
+  top: 120px;
   left: 289px;
 }
 .building-two{
@@ -111,13 +111,14 @@ body{
 }
 .building-one > .front-wall > .moldings > .molding-support{
   width: 292px;
-  height: 100px;
+  height: 56px;
   background: linear-gradient(0.25turn, var(--color-b1-front-wall4) 0%, var(--color-b1-front-wall1) 100%);
   position: absolute;
-  top: 51px;
+  top: 45px;
   left: -1px;
   border-radius: 0px 0px 0px 0px/ 0px 0px 0px 0px;
   border-left: 1px solid var(--color-line3);
+  transform: skew(0deg, -2deg);
 }
 .building-one > .front-wall > .moldings > .molding-support:after{
   content: '';
@@ -157,48 +158,49 @@ body{
   border-top: 1px solid var(--color-line3);
   border-bottom: 2px solid var(--color-line1);
 }
+.building-one > .front-wall > .moldings > .molding-line0{
+  top: 1px;
+  height: 1px;
+  left: 2px;
+  transform: rotate(0deg);
+}
 .building-one > .front-wall > .moldings > .molding-line1{
   width: 271px;
   height: 0px;
   position: absolute;
-  top: 51px;
-  left: 23px;
+  top: 48px;
+  left: 25px;
   transform: rotate(-1deg);
   border-bottom: 1px solid var(--color-line1);
 }
 .building-one > .front-wall > .moldings > .molding-line1:before{
   content: '';
-  height: 10px;
-  width: 265px;
+  height: 7px;
+  width: 278px;
   position: absolute;
-  /* solution 1 */
-  /* opacity: 0.8;
+  left: -11px;
+  top: 1px;
   background-image: 
-    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3)), 
-    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3));
-  background-position: 0 0, 10px 10px;
-  background-size: 20px 20px; */
-  /* solution 2*/
-  /* opacity: 0.8;
-  background-image: 
-    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3)), 
-    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3));
-  background-position: 0 0, 10px 10px;
-  background-size: 20px 20px; */
-  /* solution 3 */
-  content: '';
-  height: 10px;
-  width: 265px;
-  position: absolute;
-  opacity: 0.8;
-  background-image: 
-    repeating-linear-gradient(69deg, var(--color-line3) 5%, transparent 25%, transparent 75%, var(--color-line3) 90%, var(--color-line3)), 
-    repeating-linear-gradient(87deg, var(--color-line3) 5%, transparent 25%, transparent 75%, var(--color-line3) 90%, var(--color-line3));
-  background-position: 0 0, 10px 10px;
+    repeating-linear-gradient(40deg, var(--color-line1) 5%, transparent 25%, transparent 75%, var(--color-line1) 99%, var(--color-line1)), 
+    repeating-linear-gradient(270deg, var(--color-line1) 7%, transparent 25%, transparent 75%, var(--color-line1) 110%, var(--color-line3))
+  ;
+  background-position: 0 0, 12px 10px;
   background-size: 20px 20px;
+  transform: rotate(0deg);left: -11px;
+}
+.building-one > .front-wall > .moldings > .molding-line1:after{
+  content: '';
+  height: 7px;
+  width: 263px;
+  position: absolute;
+  left: -2px;
+  top: 2px;
+  opacity: 0.3;
+  background: var(--color-b1-front-wall1);
+  transform: rotate(0deg);
 }
 .building-one > .front-wall > .moldings > .molding-line2-3{
-  top: 64px;
+  top: 65px;
   height: 2px; 
   left: 1px;
 }
