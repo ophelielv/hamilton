@@ -83,40 +83,72 @@ body{
 }
 .building-one > .front-wall > .moldings > .molding{
   width: 288px;
-  height: 10px;
+  height: 12px;
   transform: skew(-67deg);
   background: linear-gradient(0.25turn, var(--color-b1-front-wall4) 0%, var(--color-b1-front-wall1) 100%);
   border-left: 10px solid var(--color-line3);
-  border-top: 3px solid var(--color-line3);
+  border-top: 1px solid var(--color-line1);
   position: absolute;
-  top: 39px;
-  left: 10px;
+  top: 38px;
+  left: 8px;
   border-radius: 5px 20px 0px 0px/ 5px 12px 0px 0px;
+}
+.building-one > .front-wall > .moldings > .molding:before{
+  content: '';
+  width: 3px;
+  height: 277px;
+  position: absolute;
+  top: -144px;
+  left: 124px;
+  background: linear-gradient(0.25turn, var(--color-b1-front-wall4) 0%, var(--color-b1-front-wall1) 100%);
+  transform: skew(68deg) rotate(90deg);
+  border-top: 1px solid var(--color-line3);
+  border-left: 2px solid var(--color-line3);
+  border-right: 2px solid var(--color-line1);
+  border-bottom: 2px solid transparent;
+  border-bottom-left-radius: 2px 12px;
+  border-top-left-radius: 49px 12px;
 }
 .building-one > .front-wall > .moldings > .molding-support{
   width: 292px;
   height: 100px;
   background: linear-gradient(0.25turn, var(--color-b1-front-wall4) 0%, var(--color-b1-front-wall1) 100%);
-  /* border: 1px solid var(--color-line3); */
   position: absolute;
   top: 51px;
-  left: 0px;
+  left: -1px;
   border-radius: 0px 0px 0px 0px/ 0px 0px 0px 0px;
+  border-left: 1px solid var(--color-line3);
 }
-.building-one > .front-wall > .moldings > .molding-support:before{
+.building-one > .front-wall > .moldings > .molding-support:after{
   content: '';
-  width: 15px;
+  width: 17px;
   height: 23px;
   position: absolute;
-  top: -10px;
-  left: 3px;
+  top: -11px;
+  left: 4px;
   background: var(--color-b1-front-wall4);
   transform: skew(-25deg) rotate(65deg);
   border-top: 2px solid var(--color-line3);
-  border-left: 3px solid var(--color-line3);
+  border-left: 3px solid var(--color-line1);
   border-right: 1px solid var(--color-line3);
   border-bottom: 2px solid var(--color-line3);
   border-radius: 0px 21px 0px 0px / 0px 25px 0px 0px;
+}
+.building-one > .front-wall > .moldings > .molding-support:before{
+  content: '';
+  width: 4px;
+  height: 23px;
+  position: absolute;
+  top: -23px;
+  left: 10px;
+  /* background: var(--color-b1-front-wall4); */
+  background: linear-gradient(var(--color-b1-front-wall1) 0%, var(--color-b1-front-wall4) 100%);;
+  transform: skew(-25deg) rotate(65deg);
+  border-top: 1px solid transparent;
+  border-left: 2px solid var(--color-line1);
+  border-right: 2px solid var(--color-line1);
+  border-bottom: 2px solid var(--color-line1);
+  border-bottom-left-radius: 2px 12px;
 }
 .building-one > .front-wall > .moldings > .molding-line-rect{
   width: 292px;
@@ -134,10 +166,41 @@ body{
   transform: rotate(-1deg);
   border-bottom: 1px solid var(--color-line1);
 }
+.building-one > .front-wall > .moldings > .molding-line1:before{
+  content: '';
+  height: 10px;
+  width: 265px;
+  position: absolute;
+  /* solution 1 */
+  /* opacity: 0.8;
+  background-image: 
+    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3)), 
+    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3));
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px; */
+  /* solution 2*/
+  /* opacity: 0.8;
+  background-image: 
+    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3)), 
+    repeating-linear-gradient(45deg, var(--color-line3) 25%, transparent 25%, transparent 75%, var(--color-line3) 75%, var(--color-line3));
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px; */
+  /* solution 3 */
+  content: '';
+  height: 10px;
+  width: 265px;
+  position: absolute;
+  opacity: 0.8;
+  background-image: 
+    repeating-linear-gradient(69deg, var(--color-line3) 5%, transparent 25%, transparent 75%, var(--color-line3) 90%, var(--color-line3)), 
+    repeating-linear-gradient(87deg, var(--color-line3) 5%, transparent 25%, transparent 75%, var(--color-line3) 90%, var(--color-line3));
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+}
 .building-one > .front-wall > .moldings > .molding-line2-3{
   top: 64px;
   height: 2px; 
-  left: 2px;
+  left: 1px;
 }
 .building-one > .front-wall > .moldings > .molding-line4-5{
   top: 78px;
