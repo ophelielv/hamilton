@@ -15,6 +15,7 @@
   --color-b1-front-wall1: #e7ddcf;
   --color-b1-front-wall2: #a07b57;
   --color-b1-front-wall3: #f3cc85;
+  --color-b1-front-wall4: #988569;
   --color-sideway1: #e5d9cd;
   --color-sideway2: #dfcdb7;
   --color-sideway-left-side: #e5d9cd;
@@ -55,6 +56,7 @@ body{
   width: 292px;
   height: 770px;
   background: var(--color-b1-front-wall1);
+  border: 1px solid var(--color-line3);
   position: absolute;
   top: 125px;
   left: 289px;
@@ -63,9 +65,89 @@ body{
   height: 662px;
   width: 90px;
   background: var(--color-b1-grey-wall3);
+  border: 1px solid var(--color-line3);
   position: absolute;
   top: 55px;
   right: 130px;
+}
+.building-two:before{
+  content: '';
+  height: 115px;
+  width: 220px;
+  background: var(--color-b1-grey-wall3);
+  border: 1px solid var(--color-line3);
+  position: absolute;
+  top: 52px;
+  right: 90px;
+  transform: skewY(-25deg);
+}
+.building-one > .front-wall > .moldings > .molding{
+  width: 288px;
+  height: 10px;
+  transform: skew(-67deg);
+  background: linear-gradient(0.25turn, var(--color-b1-front-wall4) 0%, var(--color-b1-front-wall1) 100%);
+  border-left: 10px solid var(--color-line3);
+  border-top: 3px solid var(--color-line3);
+  position: absolute;
+  top: 39px;
+  left: 10px;
+  border-radius: 5px 20px 0px 0px/ 5px 12px 0px 0px;
+}
+.building-one > .front-wall > .moldings > .molding-support{
+  width: 292px;
+  height: 100px;
+  background: linear-gradient(0.25turn, var(--color-b1-front-wall4) 0%, var(--color-b1-front-wall1) 100%);
+  /* border: 1px solid var(--color-line3); */
+  position: absolute;
+  top: 51px;
+  left: 0px;
+  border-radius: 0px 0px 0px 0px/ 0px 0px 0px 0px;
+}
+.building-one > .front-wall > .moldings > .molding-support:before{
+  content: '';
+  width: 15px;
+  height: 23px;
+  position: absolute;
+  top: -10px;
+  left: 3px;
+  background: var(--color-b1-front-wall4);
+  transform: skew(-25deg) rotate(65deg);
+  border-top: 2px solid var(--color-line3);
+  border-left: 3px solid var(--color-line3);
+  border-right: 1px solid var(--color-line3);
+  border-bottom: 2px solid var(--color-line3);
+  border-radius: 0px 21px 0px 0px / 0px 25px 0px 0px;
+}
+.building-one > .front-wall > .moldings > .molding-line-rect{
+  width: 292px;
+  position: absolute;
+  transform: rotate(-2deg);
+  border-top: 1px solid var(--color-line3);
+  border-bottom: 2px solid var(--color-line1);
+}
+.building-one > .front-wall > .moldings > .molding-line1{
+  width: 271px;
+  height: 0px;
+  position: absolute;
+  top: 51px;
+  left: 23px;
+  transform: rotate(-1deg);
+  border-bottom: 1px solid var(--color-line1);
+}
+.building-one > .front-wall > .moldings > .molding-line2-3{
+  top: 64px;
+  height: 2px; 
+  left: 2px;
+}
+.building-one > .front-wall > .moldings > .molding-line4-5{
+  top: 78px;
+  height: 1px;
+  left: 0px;
+}
+.building-one > .front-wall > .moldings > .molding-line6-7{
+  top: 97px;
+  height: 0px;
+  left: 0px;
 }
 .building-three{
   height: 499px;
@@ -74,6 +156,16 @@ body{
   position: absolute;
   top: 220px;
   right: 0px;
+}
+.building-three:before{
+  content: '';
+  height: 66px;
+  width: 80px;
+  background: var(--color-b1-front-wall2);
+  border: 1px solid var(--color-line3);
+  position: absolute;
+  top: -67px;
+  right: 48px;
 }
 /* ** Side wall ** */
 .building-one > .side-wall > .grey-wall, .building-one > .side-wall > .brick-wall{
