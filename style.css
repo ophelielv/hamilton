@@ -6,7 +6,7 @@
   --background-gold3: #fcda4b;
   --color-brick: #b9a183;
   --color-sky: #a3d8df;
-  --color-par: #82828a;
+  --color-tar: #82828a;
   --color-b1-grey-wall1: #d9d8dc;
   --color-b1-grey-wall2: #cbc9cf;
   --color-b1-grey-wall3: #7e7e88;
@@ -16,6 +16,10 @@
   --color-b1-front-wall2: #a07b57;
   --color-b1-front-wall3: #f3cc85;
   --color-b1-front-wall4: #988569;
+  --color-b1-arch1: #9f876d;
+  --color-b1-arch2: #d6c5ad;
+  --color-b1-arch3: #e6b67e;
+  --color-b1-lamp: #f1e7d1;
   --color-sideway1: #e5d9cd;
   --color-sideway2: #dfcdb7;
   --color-sideway-left-side: #e5d9cd;
@@ -46,12 +50,12 @@ body{
 }
 
 /* ********************************* BUILDINGS ********************************* */
-/* ***** Building one ***** */
-/* ** Front wall ** */
 .buildings .perspective{
   transform-origin: 100% 0;
   transform: skewY(25deg);
 }
+/* ***** Building one ***** */
+/* ** Front wall ** */
 .building-one > .front-wall{
   width: 292px;
   height: 768px;
@@ -60,26 +64,6 @@ body{
   position: absolute;
   top: 120px;
   left: 289px;
-}
-.building-two{
-  height: 662px;
-  width: 90px;
-  background: var(--color-b1-grey-wall3);
-  border: 1px solid var(--color-line3);
-  position: absolute;
-  top: 55px;
-  right: 130px;
-}
-.building-two:before{
-  content: '';
-  height: 115px;
-  width: 220px;
-  background: var(--color-b1-grey-wall3);
-  border: 1px solid var(--color-line3);
-  position: absolute;
-  top: 52px;
-  right: 90px;
-  transform: skewY(-25deg);
 }
 .building-one > .front-wall > .moldings > .molding{
   width: 288px;
@@ -142,7 +126,6 @@ body{
   position: absolute;
   top: -23px;
   left: 10px;
-  /* background: var(--color-b1-front-wall4); */
   background: linear-gradient(var(--color-b1-front-wall1) 0%, var(--color-b1-front-wall4) 100%);;
   transform: skew(-25deg) rotate(65deg);
   border-top: 1px solid transparent;
@@ -214,23 +197,144 @@ body{
   height: 0px;
   left: 0px;
 }
-.building-three{
-  height: 499px;
-  width: 130px;
-  background: var(--color-b1-front-wall2);
+.building-one > .front-wall > .middle > .colums{
+  height: 661px;
+  width: 67px;
   position: absolute;
-  top: 220px;
-  right: 0px;
+  top: 105px;
+  left: 0;
+  opacity: 0.5;
 }
-.building-three:before{
-  content: '';
-  height: 66px;
-  width: 80px;
-  background: var(--color-b1-front-wall2);
-  border: 1px solid var(--color-line3);
+.building-one > .front-wall > .middle > .arch1{
+  height: 623px;
+  width: 67px;
   position: absolute;
-  top: -67px;
-  right: 48px;
+  top: 102px;
+  left: 67px;
+}
+.building-one > .front-wall > .middle > .arch2{
+  height: 571px;
+  width: 67px;
+  position: absolute;
+  top: 100px;
+  left: 134px;
+}
+.building-one > .front-wall > .middle > .arch3{
+  height: 525px;
+  width: 67px;
+  position: absolute;
+  top: 98px;
+  left: 201px;
+}
+.building-one > .front-wall > .middle .arch{
+  height: 269px;
+  width: 46px;
+  background: linear-gradient(var(--color-b1-arch1) 0%, var(--color-b1-arch2) 33%, var(--color-b1-arch3) 60%, var(--color-b1-arch3) 100%);
+  position: absolute;
+  top: 23px;
+  right: 5px;
+  border: 5px double var(--color-line1);
+  border-radius: 29px 29px 0px 0px / 100px 100px 0px 0px;
+}
+.building-one > .front-wall > .middle .arch:before{
+  content: '';
+    height: 100%;
+    width: 58%;
+    position: absolute;
+    top: 0;
+    left: 57%;
+    background: linear-gradient(0.25turn, transparent, black);
+    opacity: 54%;
+    border-radius: 0px 33px 0px 0px / 0px 115px 0px 0px;
+}
+.building-one > .front-wall > .middle .arch:after{
+  content: '';
+  height: 4px;
+  width: 3px;
+  position: absolute;
+  top: -11px;
+  left: 19px;
+  /* background: var(--color-b1-arch3); */
+  background: linear-gradient(0.25turn, var(--color-b1-arch1) 0%, var(--color-b1-arch3) 80%, black 100%);
+  border-radius: 11px;
+  border: 1px solid var(--color-line1);
+  border-right-width: 2px;
+  border-top-width: 2px;
+}
+.building-one > .front-wall > .middle .arch > .chain{
+  width: 0px;
+  position: absolute;
+  top: 0;
+  left: 21px;
+  border-left: 2px double var(--color-line1);
+}
+.building-one > .front-wall > .middle .arch > .chain:before{
+  content: '';
+  width: 4px;
+  height: 5px;
+  position: absolute;
+  top: 45px;
+  left: -3px;
+  border-radius: 10px;
+  background: var(--color-line1);
+}
+.building-one > .front-wall > .middle > .arch1 .chain{ height: 70px; }
+.building-one > .front-wall > .middle > .arch2 .chain{ height: 60px; }
+.building-one > .front-wall > .middle > .arch3 .chain{ height: 50px; }
+.building-one > .front-wall > .middle > .arch1 .chain:before{ top: 65px; }
+.building-one > .front-wall > .middle > .arch2 .chain:before{ top: 55px; }
+.building-one > .front-wall > .middle > .arch3 .chain:before{ top: 45px; }
+.building-one > .front-wall > .middle .arch > .lamp{
+  height: 25px;
+  width: 8px;
+  position: absolute;
+  left: 17px;
+  border: 1px solid var(--color-line1);
+  border-right-width: 3px;
+  border-radius: 6px 6px 5px 4px / 12px 8px 8px 6px;
+  background-image: radial-gradient( ellipse farthest-side at 2px 22px, white 0%, var(--color-b1-lamp) 50%, var(--color-b1-arch1) 100% );
+  border-bottom-width: 2px;
+}
+.building-one > .front-wall > .middle .arch > .lamp:before{ 
+  content: '';
+  height: 167px;
+  width: 41px;
+  position: absolute;
+  left: -15px;
+  /* background-image: radial-gradient( ellipse farthest-side at 2px 22px, white 0%, var(--color-b1-lamp) 50%, var(--color-b1-arch1) 100% ); */
+  background: linear-gradient(var(--color-b1-lamp), transparent);
+  border-radius: 50px 36px;
+  opacity: 35%;
+  top: 5px;
+}
+.building-one > .front-wall > .middle > .arch1 .lamp{ top: 70px; }
+.building-one > .front-wall > .middle > .arch2 .lamp{ top: 60px; }
+.building-one > .front-wall > .middle > .arch3 .lamp{ top: 50px; }
+.building-one > .front-wall > .middle .arch > .lamp > .lamp-lines{
+  content: '';
+  height: 24px;
+  width: 0px;
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  border-left: 1px solid var(--color-line1);
+}
+.building-one > .front-wall > .middle .arch > .lamp > .lamp-lines:before{
+  content: '';
+  height: 0px;
+  width: 9px;
+  position: absolute;
+  top: 7px;
+  left: -5px;
+  border-top: 1px solid var(--color-line1);
+}
+.building-one > .front-wall > .middle > .blanck{
+  height: 477px;
+  width: 25px;
+  position: absolute;
+  top: 97px;
+  right: 0;
+  opacity: 0.5;
 }
 /* ** Side wall ** */
 .building-one > .side-wall > .grey-wall, .building-one > .side-wall > .brick-wall{
@@ -309,7 +413,46 @@ body{
   border-left: 2px solid var(--color-line1);
   opacity: 0.4;
 }
-
+/* ***** Building two ***** */
+.building-two{
+  height: 662px;
+  width: 90px;
+  background: var(--color-b1-grey-wall3);
+  border: 1px solid var(--color-line3);
+  position: absolute;
+  top: 55px;
+  right: 130px;
+}
+.building-two:before{
+  content: '';
+  height: 115px;
+  width: 220px;
+  background: var(--color-b1-grey-wall3);
+  border: 1px solid var(--color-line3);
+  position: absolute;
+  top: 52px;
+  right: 90px;
+  transform: skewY(-25deg);
+}
+/* ***** Building three ***** */
+.building-three{
+  height: 499px;
+  width: 130px;
+  background: var(--color-b1-front-wall2);
+  position: absolute;
+  top: 220px;
+  right: 0px;
+}
+.building-three:before{
+  content: '';
+  height: 66px;
+  width: 80px;
+  background: var(--color-b1-front-wall2);
+  border: 1px solid var(--color-line3);
+  position: absolute;
+  top: -67px;
+  right: 48px;
+}
 /* ** Left poster & structure ** */
 /* Structure */
 .building-one > .side-wall .poster-container{
@@ -592,17 +735,17 @@ body{
  /* background-color: violet; */
 }
 
-/* ***** Par ***** */
-.par{
+/* ***** Tar ***** */
+.tar{
   height: 0px;
   width: 0px;
   position: absolute;
   bottom: 0;
   right: 0;
-  border-bottom: 135px solid var(--color-par);
+  border-bottom: 135px solid var(--color-tar);
   border-left: 500px solid transparent;
 }
-.line-middle-par{
+.line-middle-tar{
   height: 0px;
   width: 185px;
   position: absolute;
@@ -633,9 +776,9 @@ body{
   height: 0px;
   width: 525px;
   position: absolute;
-  bottom: 47px;
+  bottom: 46px;
   right: -18px;
-  border-top: 45px solid var(--color-sideway1);
+  border-top: 46px solid var(--color-sideway1);
   border-image-slice: 1;
   border-left: 171px solid transparent;
   border-right: 12px solid transparent;
