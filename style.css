@@ -198,16 +198,15 @@ body{
   height: 0px;
   left: 0px;
 }
-.building-one > .front-wall > .middle > .colums{
+.building-one > .front-wall > .middle > .columns{
   height: 661px;
   width: 67px;
   position: absolute;
   top: 105px;
   left: 0;
-  opacity: 0.5;
 }
-.building-one > .front-wall > .middle div { position: absolute; }
-.building-one > .front-wall > .middle > .columns > div[class^="column-"] {
+.building-one > .front-wall > .middle div{ position: absolute; }
+.building-one > .front-wall > .middle > .columns > div[class^="column-"]{
   background: linear-gradient( 
     var(--color-b1-column1) 0%, 
     var(--color-b1-front-wall1) 4%, 
@@ -220,16 +219,30 @@ body{
   border-right: 2px double var(--color-line1);
   border-top: 1px solid var(--color-line1);
 }
-.building-one > .front-wall > .middle > .columns > .column-1 { 
+.building-one > .front-wall > .middle > .columns > .column-1{ 
   left: -4px; 
-  top: 117px; 
+  top: 18px; 
   height: 460px;
   width: 23px; 
 }
-.building-one > .front-wall > .middle > .columns .relief{
+.building-one > .front-wall > .middle > .columns > .column-1:before{
+  content: '';
+  height: 455px;
+  width: 4px;
+  position: absolute;
+  top: 4px;
+  background: var(--color-b1-arch2);
+  border: solid 1px var(--color-line1);
+  left: -6px;
+  transform: skew(0deg, -23deg);
+  opacity: 0.9;
+}
+.building-one > .front-wall > .middle > .columns > .column-1 .relief,
+.building-one > .front-wall > .middle > .columns > .column-2 .relief{
   height: 5px;
   width: 6px;
   position: absolute;
+  top: -2px;
   left: -7px;
   border-radius: 2px 0px 0px 2px;
   background: var(--color-b1-column1);
@@ -238,7 +251,8 @@ body{
   transform: skew(0deg, -25deg);
   border-top-width: 2px;
 }
-.building-one > .front-wall > .middle > .columns .relief:before{
+.building-one > .front-wall > .middle > .columns > .column-1 .relief:before,
+.building-one > .front-wall > .middle > .columns > .column-2 .relief:before{
   content: '';
   position: absolute;
   top: 4px;
@@ -252,7 +266,8 @@ body{
   border-top-width: 3px;
 }
 .building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-top{ top: -4px; }
-.building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-top:before{ width: 24px; }
+.building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-top:before, 
+.building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-bottom:before{ width: 24px; }
 .building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-bottom{ top: 426px; }
 .building-one > .front-wall > .middle > .columns .decor{
   left: -1px;
@@ -270,31 +285,19 @@ body{
 .building-one > .front-wall > .middle > .columns > .column-1 > .decor-1-bottom{ top: 438px; width: 23px; }
 .building-one > .front-wall > .middle > .columns > .column-2 { 
   left: 60px;
-  top: 114px;
+  top: 10px;
   z-index: 1;
   height: 448px;
   width: 19px;
 }
 .building-one > .front-wall > .middle > .columns > .column-2 > .relief-2-top:before{ width: 20px; }
 .building-one > .front-wall > .middle > .columns > .column-2 > .decor-2-top{ top: 20px; width: 19px; }
-.building-one > .front-wall > .middle > .columns > .bottom {
-  height: 208px;
-  width: 83px;
-  z-index: 2;  
-  top: 570px;
-  left: -14px;
-  background: var(--color-b1-front-wall1) ;
-  transform: skew(0deg, -12deg);
-  border-left: 2px solid var(--color-line1);
-  border-right: 1px solid var(--color-line1);
-  border-top: 1px solid var(--color-line1);
-}
 .building-one > .front-wall > .middle > .columns > .sign-hook{
-  top: 220px;
+  top: 119px;
   left: 25px;
   height: 135px;
   width: 35px;
-  background: linear-gradient(var(--color-b1-arch1), var(--color-b1-arch1), transparent);
+  background: linear-gradient(var(--color-b1-arch1), var(--color-b1-arch1) 0%, transparent 40%);
   border-top: 7px solid var(--color-star-black);
   border-bottom: 6px solid var(--color-star-black);
 }
@@ -306,12 +309,34 @@ body{
   height: 473px;
   opacity: 1;
   background: linear-gradient(
-    transparent 0%, 
-    var(--color-b1-column1) 20%, 
-    transparent 27%, 
-    transparent 47%, 
-    var(--color-b1-arch1) 100%
+    transparent 0%, var(--color-b1-column1) 20%, transparent 27%, transparent 60%, 
+    var(--color-b1-column1) 85%, var(--color-b1-arch1) 100%
   );
+}
+/* .building-one > .front-wall > .middle > .columns{} */
+.building-one > .front-wall > .middle > .columns > .bottom {
+  height: 195px;
+  width: 83px;
+  z-index: 2;
+  top: 465px;
+  left: -12px;
+  background: var(--color-b1-front-wall1) ;
+  transform: skew(0deg, -12deg);
+  border-left: 2px solid var(--color-line1);
+  border-right: 1px solid var(--color-line1);
+  border-top: 1px solid var(--color-line1);
+}
+.building-one > .front-wall > .middle > .bottom > .relief{}
+.building-one > .front-wall > .middle > .bottom > .bricks{}
+.building-one > .front-wall > .middle > .columns > .bottom > .door{
+  height: 127px;
+  width: 62px;
+  top: 60px;
+  left: 6px;
+  transform: skew(0deg, -8deg);
+  border-left: 2px solid var(--color-line1);
+  border-right: 2px double var(--color-line1);
+  border-top: 2px double var(--color-line1);
 }
 .building-one > .front-wall > .middle > .arch-1{
   height: 623px;
