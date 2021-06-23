@@ -19,6 +19,7 @@
   --color-b1-arch1: #9f876d;
   --color-b1-arch2: #d6c5ad;
   --color-b1-arch3: #e6b67e;
+  --color-b1-column1: #c5a882;
   --color-b1-lamp: #f1e7d1;
   --color-sideway1: #e5d9cd;
   --color-sideway2: #dfcdb7;
@@ -205,21 +206,104 @@ body{
   left: 0;
   opacity: 0.5;
 }
-.building-one > .front-wall > .middle > .arch1{
+.building-one > .front-wall > .middle div { position: absolute; }
+.building-one > .front-wall > .middle > .columns > div[class^="column-"] {
+  background: linear-gradient( 
+    var(--color-b1-column1) 0%, 
+    var(--color-b1-front-wall1) 4%, 
+    var(--color-b1-column1) 7%, 
+    var(--color-b1-column1) 10%, 
+    var(--color-b1-front-wall1) 35%, 
+    var(--color-b1-column1) 60%
+  );
+  border-left: 4px double var(--color-line1);
+  border-right: 2px double var(--color-line1);
+  border-top: 1px solid var(--color-line1);
+}
+.building-one > .front-wall > .middle > .columns > .column-1 { 
+  left: -4px; 
+  top: 117px; 
+  height: 460px;
+  width: 23px; 
+}
+.building-one > .front-wall > .middle > .columns .relief{
+  height: 5px;
+  width: 6px;
+  position: absolute;
+  left: -7px;
+  border-radius: 2px 0px 0px 2px;
+  background: var(--color-b1-column1);
+  border: solid 1px var(--color-line1);
+  border-bottom-width: 2px;
+  transform: skew(0deg, -25deg);
+  border-top-width: 2px;
+}
+.building-one > .front-wall > .middle > .columns .relief:before{
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  height: 4px;
+  background: var(--color-b1-column1);
+  border: solid 1px var(--color-line1);
+  border-bottom-width: 2px;
+  border-radius: 0px 2px 2px 0px;
+  transform: skew(0deg, 26deg);
+  border-top-width: 3px;
+}
+.building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-top{ top: -4px; }
+.building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-top:before{ width: 24px; }
+.building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-bottom{ top: 426px; }
+.building-one > .front-wall > .middle > .columns .decor{
+  left: -1px;
+  height: 2px;
+  width: 23px;
+  background: var(--color-b1-arch2);
+  border: solid 1px var(--color-line1);
+  border-bottom-width: 2px;
+  border-radius: 0px;
+  transform: skew(0deg, -5deg);
+  border-top-width: 1px;
+  border-bottom-style: double;
+}
+.building-one > .front-wall > .middle > .columns > .column-1 > .decor-1-top{ top: 23px; width: 23px; }
+.building-one > .front-wall > .middle > .columns > .column-1 > .decor-1-bottom{ top: 438px; width: 23px; }
+.building-one > .front-wall > .middle > .columns > .column-2 { 
+  left: 60px;
+  top: 114px;
+  z-index: 1;
+  height: 448px;
+  width: 19px;
+}
+.building-one > .front-wall > .middle > .columns > .column-2 > .relief-2-top:before{ width: 20px; }
+.building-one > .front-wall > .middle > .columns > .column-2 > .decor-2-top{ top: 20px; width: 19px; }
+.building-one > .front-wall > .middle > .columns > .bottom {
+  height: 208px;
+  width: 83px;
+  z-index: 2;  
+  top: 570px;
+  left: -14px;
+  background: var(--color-b1-front-wall1) ;
+  transform: skew(0deg, -12deg);
+  border-left: 2px solid var(--color-line1);
+  border-right: 1px solid var(--color-line1);
+  border-top: 1px solid var(--color-line1);
+}
+.building-one > .front-wall > .middle > .arch-1{
   height: 623px;
   width: 67px;
   position: absolute;
   top: 102px;
   left: 67px;
 }
-.building-one > .front-wall > .middle > .arch2{
+.building-one > .front-wall > .middle > .arch-2{
   height: 571px;
   width: 67px;
   position: absolute;
   top: 100px;
   left: 134px;
 }
-.building-one > .front-wall > .middle > .arch3{
+.building-one > .front-wall > .middle > .arch-3{
   height: 525px;
   width: 67px;
   position: absolute;
@@ -278,12 +362,12 @@ body{
   border-radius: 10px;
   background: var(--color-line1);
 }
-.building-one > .front-wall > .middle > .arch1 .chain{ height: 70px; }
-.building-one > .front-wall > .middle > .arch2 .chain{ height: 60px; }
-.building-one > .front-wall > .middle > .arch3 .chain{ height: 50px; }
-.building-one > .front-wall > .middle > .arch1 .chain:before{ top: 65px; }
-.building-one > .front-wall > .middle > .arch2 .chain:before{ top: 55px; }
-.building-one > .front-wall > .middle > .arch3 .chain:before{ top: 45px; }
+.building-one > .front-wall > .middle > .arch-1 .chain{ height: 70px; }
+.building-one > .front-wall > .middle > .arch-2 .chain{ height: 60px; }
+.building-one > .front-wall > .middle > .arch-3 .chain{ height: 50px; }
+.building-one > .front-wall > .middle > .arch-1 .chain:before{ top: 65px; }
+.building-one > .front-wall > .middle > .arch-2 .chain:before{ top: 55px; }
+.building-one > .front-wall > .middle > .arch-3 .chain:before{ top: 45px; }
 .building-one > .front-wall > .middle .arch > .lamp{
   height: 25px;
   width: 8px;
@@ -307,9 +391,9 @@ body{
   opacity: 35%;
   top: 5px;
 }
-.building-one > .front-wall > .middle > .arch1 .lamp{ top: 70px; }
-.building-one > .front-wall > .middle > .arch2 .lamp{ top: 60px; }
-.building-one > .front-wall > .middle > .arch3 .lamp{ top: 50px; }
+.building-one > .front-wall > .middle > .arch-1 .lamp{ top: 70px; }
+.building-one > .front-wall > .middle > .arch-2 .lamp{ top: 60px; }
+.building-one > .front-wall > .middle > .arch-3 .lamp{ top: 50px; }
 .building-one > .front-wall > .middle .arch > .lamp > .lamp-lines{
   content: '';
   height: 24px;
