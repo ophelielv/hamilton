@@ -289,6 +289,30 @@ body{
   border-right: 1px solid var(--color-line1);
   border-top: 1px solid var(--color-line1);
 }
+.building-one > .front-wall > .middle > .columns > .sign-hook{
+  top: 220px;
+  left: 25px;
+  height: 135px;
+  width: 35px;
+  background: linear-gradient(var(--color-b1-arch1), var(--color-b1-arch1), transparent);
+  border-top: 7px solid var(--color-star-black);
+  border-bottom: 6px solid var(--color-star-black);
+}
+.building-one > .front-wall > .middle > .columns > .sign-hook:before{
+  content: '';
+  position: absolute;
+  top: -128px;
+  width: 35px;
+  height: 473px;
+  opacity: 1;
+  background: linear-gradient(
+    transparent 0%, 
+    var(--color-b1-column1) 20%, 
+    transparent 27%, 
+    transparent 47%, 
+    var(--color-b1-arch1) 100%
+  );
+}
 .building-one > .front-wall > .middle > .arch-1{
   height: 623px;
   width: 67px;
