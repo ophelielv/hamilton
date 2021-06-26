@@ -34,15 +34,10 @@
   --border-width-side-wall: 2px;
   --height-front-poster: 480px;
   --width-front-poster: 280px;
-
-  /* --stripe: #cfd8dc;  */
-  /* --bg: #e1e1e1; */
 }
-
 body{
   background: #3f3f44;
 }
-
 .container{
   width: 800px;
   height: 800px;
@@ -50,7 +45,6 @@ body{
   position: relative;
   overflow: hidden;
 }
-
 /* ********************************* BUILDINGS ********************************* */
 .buildings .perspective{
   transform-origin: 100% 0;
@@ -574,7 +568,10 @@ body{
 .building-one > .front-wall > .middle > .light-panels, 
 .building-one > .front-wall > .middle > .light-panels > div,
 .building-one > .front-wall > .middle > .entrance,
-.building-one > .front-wall > .middle > .entrance > div{ position: absolute; }
+.building-one > .front-wall > .middle > .entrance > div,
+.building-one > .front-wall > .middle > .entrance > div::before,
+.building-one > .front-wall > .middle > .entrance > div::after,
+.building-one-entrance > .awning > .front-awning{ position: absolute; }
 .building-one > .front-wall > .middle > .light-panels{
   top: 325px;
   left: 75px;
@@ -680,12 +677,6 @@ body{
   justify-content: space-between;
 }
 .building-one > .front-wall > .middle > .light-panels div[class^="bulb-line-"] > .bulb{
-  /* border: 1px solid var(--color-line1);
-  background: white;
-  height: 11px;
-  width: 11px;
-  border-radius: 11px;
-  position: unset; */
   border: 2px solid var(--color-line1);
   background: radial-gradient(farthest-corner at 3px 8px, white 25%, var(--background-gold3) 65%);
   height: 9px;
@@ -728,6 +719,53 @@ body{
   height: 20px;
   width: 235px;
   transform: skew(-22deg, -2deg);
+}
+.building-one > .front-wall > .middle > .entrance > .awning > .side-awning{
+  top: -5px;
+  left: 2px;
+  background: orange;
+  height: 15px;
+  width: 190px;
+  transform: skew(22deg, -4deg);
+  border: 1px solid var(--color-line1);
+  border-top: 8px solid var(--color-line1);
+}
+.building-one-entrance > .awning > .front-awning{
+  bottom: 206px;
+  right: 47px;
+  background: green;
+  height: 15px;
+  width: 190px;
+  transform: skew(0deg, -9deg);
+  /* border: 1px solid var(--color-line1); */
+  display: flex;
+}
+.building-one-entrance > .awning > .front-awning > .round1{
+  /* bottom: 206px; */
+  /* right: 45px; */
+  background: yellow;
+  height: 15px;
+  width: 70px;
+  /* transform: skew(0deg, -9deg); */
+  /* border: 1px solid var(--color-line1); */
+}
+.building-one-entrance > .awning > .front-awning > .round2{
+  /* bottom: 206px; */
+  /* right: 45px; */
+  background: orangered;
+  height: 15px;
+  width: 65px;
+  /* transform: skew(0deg, -9deg); */
+  /* border: 1px solid var(--color-line1); */
+}
+.building-one-entrance > .awning > .front-awning > .round3{
+  /* bottom: 206px; */
+  /* right: 45px; */
+  background: blue;
+  height: 15px;
+  width: 55px;
+  /* transform: skew(0deg, -9deg); */
+  /* border: 1px solid var(--color-line1); */
 }
 .building-one > .front-wall > .middle > .blanck{
   height: 477px;
