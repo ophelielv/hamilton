@@ -18,6 +18,7 @@
   --color-b1-front-wall4: #988569;
   --color-b1-awning1: #e0d2c0;
   --color-b1-awning2: #c4af93;
+  --color-b1-awning3: #e9e2d8;
   --color-b1-arch1: #9f876d;
   --color-b1-arch2: #d6c5ad;
   --color-b1-arch3: #e6b67e;
@@ -496,7 +497,6 @@ body{
   position: absolute;
   top: -11px;
   left: 19px;
-  /* background: var(--color-b1-arch3); */
   background: linear-gradient(0.25turn, var(--color-b1-arch1) 0%, var(--color-b1-arch3) 80%, black 100%);
   border-radius: 11px;
   border: 1px solid var(--color-line1);
@@ -728,13 +728,14 @@ body{
 }
 .building-one--entrance > .awning{ /* */ }
 .building-one--entrance > .awning > .side-awning{
-  top: 0;
+  top: -4px;
   left: -1px;
   background: var(--color-b1-awning1);
   height: 8px;
   width: 197px;
   border: 1px solid var(--color-line1);
-  border-top: 8px solid var(--color-line1);
+  border-top: 12px solid var(--color-line1);
+  border-radius: 19px 0px 0px 0px / 6px 0px 0px 0px;
 }
 .building-one--entrance > .awning > .ceiling-cone{ 
   top: 1px;
@@ -789,11 +790,7 @@ body{
   width: 165px;
   display: flex;
 }
-.building-one--entrance > .awning > .front-awning > div[class^="round"]{
-  position: relative;
-  top: 0;
-  height: 12px;
-}
+.building-one--entrance > .awning > .front-awning > div[class^="round"]{ position: relative; top: 0; height: 12px;}
 .building-one--entrance > .awning > .front-awning > .round1{ width: 60px; } 
 .building-one--entrance > .awning > .front-awning > .round2{ width: 60px; }
 .building-one--entrance > .awning > .front-awning > .round3{ width: 55px; }
@@ -803,23 +800,42 @@ body{
   overflow: hidden;
   position: absolute;
 }
-.building-one--entrance > .awning > .front-awning > .round1 > .circle{ height: 21px; width: 57px; top: 0;}
-.building-one--entrance > .awning > .front-awning > .round2 > .circle{ height: 12px; width: 60px; top: -1px;}
-.building-one--entrance > .awning > .front-awning > .round3 > .circle{ height: 13px; width: 54px; top: -2px;}
+.building-one--entrance > .awning > .front-awning > .round1 > .circle{ height: 21px; width: 57px; top: 0; /*box-shadow: -44px 11px 0px -10px var(--color-line1);*/}
+.building-one--entrance > .awning > .front-awning > .round2 > .circle{ height: 12px; width: 60px; top: -1px; /*box-shadow: -44px 11px 0px -10px var(--color-line1);*/}
+.building-one--entrance > .awning > .front-awning > .round3 > .circle{ height: 13px; width: 54px; top: -2px; /*box-shadow: -44px 11px 0px -10px var(--color-line1);*/}
 .building-one--entrance > .awning > .front-awning .circle:after{ 
   content: ''; 
   height: 55px; 
-  border: 8px solid white; 
+  border: 8px solid var(--color-b1-awning3); 
   border-radius: 55px;
 }
 .building-one--entrance > .awning > .front-awning > .round1 > .circle:after{ width: 73px; left: -9px; }
 .building-one--entrance > .awning > .front-awning > .round2 > .circle:after{ width: 81px; left: -19px; }
 .building-one--entrance > .awning > .front-awning > .round3 > .circle:after{ width: 74px; left: -13px; }
-.building-one--entrance > .awning > .front-awning .circle:after{
-  content: '';
-  position: absolute;
-  border-style: solid; 
+.building-one--entrance > .awning > .front-awning > .border-top{
+  top: -4px;
+  left: -8px;
+  height: 14px;
+  width: 175px;
+  background: 
+    linear-gradient(var(--color-line1) 0%, var(--color-line1) 37%, transparent 66%), 
+    linear-gradient(0.25turn, var(--color-line1) 0%, var(--color-line1) 12%, transparent 5%)
+  ;
+  border-radius: 60px 25px 10px 0px / 34px 21px 23px 0px;
+  transform: rotate(-1deg);
 }
+.building-one--entrance > .awning > .front-awning > div[class^="round"] > .border-bottom-line{ content: ''; border-bottom: 1px solid var(--color-line1); height: 0; }
+.building-one--entrance > .awning > .front-awning > .round1 > .border-bottom-line{ top: 21px; left: 0; width: 3px; }
+.building-one--entrance > .awning > .front-awning > .round2 > .border-bottom-line{ top: 10px; left: 0; width: 3px; transform: rotate(-3deg); }
+.building-one--entrance > .awning > .front-awning > .round3 > .border-bottom-line{ top: 10px; left: -1px; width: 7px; transform: rotate(2deg); }
+.building-one--entrance > .awning > .front-awning > div[class^="round"] > .border-bottom-curve{ display: block; overflow: hidden; }
+.building-one--entrance > .awning > .front-awning > .round1 > .border-bottom-curve{ height: 21px; width: 54px; top: 7px; left: 3px; }
+.building-one--entrance > .awning > .front-awning > .round2 > .border-bottom-curve{ height: 12px; width: 53px; top: 6px; left: 3px; }
+.building-one--entrance > .awning > .front-awning > .round3 > .border-bottom-curve{ height: 13px; width: 48px; top: 5px; left: 6px; }
+.building-one--entrance > .awning > .front-awning > div[class^="round"] > .border-bottom-curve:after{ content: ''; border-radius: 55px; border: 1px solid var(--color-line1); }
+.building-one--entrance > .awning > .front-awning > .round1 > .border-bottom-curve:after{ height: 66px; width: 79px; left: -7px; }
+.building-one--entrance > .awning > .front-awning > .round2 > .border-bottom-curve:after{ height: 53px; width: 79px; left: -14px; }
+.building-one--entrance > .awning > .front-awning > .round3 > .border-bottom-curve:after{ height: 57px; width: 74px; left: -13px; }
 .building-one > .front-wall > .middle > .blanck{
   height: 477px;
   width: 25px;
@@ -1223,10 +1239,7 @@ body{
   box-shadow: -1px 3px 8px 2px white, 2px -4px 14px 6px white;
 }
 /* ********************************* ROAD ********************************* */
-.road{
- /* background-color: violet; */
-}
-
+.road{ /* */ }
 /* ***** Tar ***** */
 .tar{
   height: 0px;
@@ -1246,7 +1259,6 @@ body{
   border-bottom: 3px outset white;
   transform: rotate(-15deg);
 }
-
 /* ***** Sideway ***** */
 .road .left-side{
   height: var(--height-sideway-left-side);
