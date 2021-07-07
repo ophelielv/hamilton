@@ -721,9 +721,10 @@ body{
   left: 364px;
   background: linear-gradient(
     var(--color-b1-entrance1) 0%,
-    var(--color-b1-entrance1) 35%,
-    var(--color-b1-entrance2) 60%,
-    var(--color-b1-entrance3) 100%
+    var(--color-b1-entrance1) 25%,
+    var(--color-b1-entrance2) 45%,
+    var(--color-b1-entrance3) 70%, 
+    white 100%
   );
   border-right: 1px solid var(--color-line1);
   border-left: 1px solid var(--color-line1);
@@ -738,6 +739,26 @@ body{
   border: 1px solid var(--color-line1);
   border-top: 12px solid var(--color-line1);
   border-radius: 19px 0px 0px 0px / 6px 0px 0px 0px;
+}
+.building-one--entrance > .awning > .side-awning > .front-lights{
+  width: 140px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  right: 8px;
+}
+.building-one--entrance > .awning .bulb{
+  border: 1px solid var(--color-line1);
+  background: radial-gradient(farthest-corner at -2px 6px, white 60%, var(--background-gold3) 66%);
+  border-radius: 6px;
+  position: unset;
+}
+.building-one--entrance > .awning > .side-awning .bulb{
+  height: 4px;
+  width: 4px;
+  margin-bottom: 1px;
+  box-shadow: 0px 1px 2px 0px black;
 }
 .building-one--entrance > .awning > .ceiling-cone{ 
   top: 1px;
@@ -838,6 +859,18 @@ body{
 .building-one--entrance > .awning > .front-awning > .round1 > .border-bottom-curve:after{ height: 66px; width: 79px; left: -7px; }
 .building-one--entrance > .awning > .front-awning > .round2 > .border-bottom-curve:after{ height: 53px; width: 79px; left: -14px; }
 .building-one--entrance > .awning > .front-awning > .round3 > .border-bottom-curve:after{ height: 57px; width: 74px; left: -13px; }
+.building-one--entrance > .awning > .front-awning > .lights > div[class^="light-row-"]{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.building-one--entrance > .awning > .front-awning > .lights > .light-row-1{ top: 15px; left: -15px; width: 70px; transform: skew(25deg, -12deg) }
+.building-one--entrance > .awning > .front-awning > .lights > .light-row-2{ top: 17px; left: 18px; width: 90px; transform: skew(25deg, -11deg); }
+.building-one--entrance > .awning > .front-awning > .lights > div[class^="light-row-"] > .bulb{
+  height: 3px;
+  width: 3px;
+  margin-bottom: 1px;
+}
 .building-one--entrance > .doors > .line{
   border: 1px solid var(--color-line1);
   border-left-style: double;
