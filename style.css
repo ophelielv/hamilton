@@ -711,7 +711,9 @@ body{
 .building-one--entrance,
 .building-one--entrance > .awning div,
 .building-one--entrance > .awning div::before,
-.building-one--entrance > .awning div::after{ position: absolute; }
+.building-one--entrance > .awning div::after,
+.building-one--entrance > .doors,
+.building-one--entrance > .doors div{ position: absolute; }
 .building-one--entrance{
   height: 144px;
   width: 219px;
@@ -836,6 +838,16 @@ body{
 .building-one--entrance > .awning > .front-awning > .round1 > .border-bottom-curve:after{ height: 66px; width: 79px; left: -7px; }
 .building-one--entrance > .awning > .front-awning > .round2 > .border-bottom-curve:after{ height: 53px; width: 79px; left: -14px; }
 .building-one--entrance > .awning > .front-awning > .round3 > .border-bottom-curve:after{ height: 57px; width: 74px; left: -13px; }
+.building-one--entrance > .doors > .line{
+  border: 1px solid var(--color-line1);
+  border-left-style: double;
+  background: var(--color-b1-entrance1);
+  width: 1px;
+  box-shadow: -1px 1px 2px 0px var(--color-line1);
+}
+.building-one--entrance > .doors > .line-1{ top: 14px; left: 73px; height: 95px; }
+.building-one--entrance > .doors > .line-2{ top: 16px; left: 86px; height: 90px; }
+.building-one--entrance > .doors > .line-3{ top: 19px; left: 133px; height: 74px; }
 .building-one > .front-wall > .middle > .blanck{
   height: 477px;
   width: 25px;
