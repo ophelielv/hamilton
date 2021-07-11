@@ -243,6 +243,8 @@ body{
   transform: skew(0deg, -23deg);
   opacity: 0.9;
 }
+/* Reliefs between arches */
+/* - A - Simple relief on column 1 and 2 */
 .building-one > .front-wall > .middle .relief{
   height: 5px;
   width: 6px;
@@ -272,10 +274,9 @@ body{
 .building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-bottom{ top: 420px; }
 .building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-top:before, 
 .building-one > .front-wall > .middle > .columns > .column-1 > .relief-1-bottom:before{ width: 24px; top: 5px; }
-.building-one > .front-wall > .middle > .columns .decor{
+.building-one > .front-wall > .middle .decor{
   left: -1px;
   height: 2px;
-  width: 23px;
   background: var(--color-b1-arch2);
   border: solid 1px var(--color-line1);
   border-bottom-width: 2px;
@@ -295,16 +296,18 @@ body{
 .building-one > .front-wall > .middle > .columns > .column-2 > .relief-2-top{ top: -2px; }
 .building-one > .front-wall > .middle > .columns > .column-2 > .relief-2-top:before{ width: 20px; top: 4px; }
 .building-one > .front-wall > .middle > .columns > .column-2 > .decor-2-top{ top: 20px; width: 19px; }
-/* Reliefs between arches */
-.building-one > .front-wall > .middle > div[class^="column-"]{
+/* - B - Relief on column 3 to 5 */
+/* - B.1 - First structure */
+.building-one > .front-wall > .middle div[class^="column-"]{
   background: linear-gradient( 90deg, transparent 0%, var(--color-b1-column1) 85%, var(--color-b1-arch1) 100% );
   border: 1px solid var(--color-line1);
   border-bottom-width: 0;
 }
-.building-one > .front-wall > .middle > .column-3{ height: 24px; width: 4px; top: 115px; left: 125px; }
-.building-one > .front-wall > .middle > .column-4{ height: 40px; width: 4px; top: 112px; left: 192px; }
-.building-one > .front-wall > .middle > .column-5{ height: 24px; width: 4px; top: 115px; left: 125px; }
-.building-one > .front-wall > .middle > div[class^="column-"]:before{
+.building-one > .front-wall > .middle .column-3{ height: 24px; width: 4px; top: 115px; left: 125px; }
+.building-one > .front-wall > .middle .column-4{ height: 40px; width: 4px; top: 112px; left: 192px; }
+.building-one > .front-wall > .middle .column-5{ height: 110px; width: 4px; top: 12px; left: -3px; } 
+/* - B.2 - Relief on column 3 to 5 : Front of the column */ 
+.building-one > .front-wall > .middle div[class^="column-"]:before{
   content: '';
   background: linear-gradient( 
     50deg, 
@@ -317,25 +320,30 @@ body{
   border-bottom: 0;
   border-radius: 4px 5px 1px 0px / 16px 10px 1px 0px;
 }
-.building-one > .front-wall > .middle > .column-3:before{ height: 26px; width: 13px; top: -3px; left: 4px; }
-.building-one > .front-wall > .middle > .column-4:before{ height: 45px; width: 13px; top: -3px; left: 4px; }
-.building-one > .front-wall > .middle > .column-5:before{ height: 26px; width: 13px; top: -3px; left: 4px; }
-.building-one > .front-wall > .middle > div[class^="column-"]:after{
+.building-one > .front-wall > .middle .column-3:before{ height: 26px; width: 13px; top: -3px; left: 4px; }
+.building-one > .front-wall > .middle .column-4:before{ height: 45px; width: 13px; top: -3px; left: 4px; }
+.building-one > .front-wall > .middle .column-5:before{ height: 370px; width: 17px; top: -3px; left: 4px; } 
+/* - B.3 - Relief on the front of the column */
+.building-one > .front-wall > .middle div[class^="column-"]:after{
   content: '';
   background: linear-gradient(-90deg, var(--color-b1-arch1), var(--color-b1-arch2));
   border-left: 1px solid var(--color-line1);
   border-right: 3px double var(--color-line1);
   border-radius: 2px 1px 0px 0px / 5px 7px 0px 0px;
 }
-.building-one > .front-wall > .middle > .column-3:after{ height: 19px; width: 4px; top: 6px; left: 8px; }
-.building-one > .front-wall > .middle > .column-4:after{ height: 19px; width: 4px; top: 6px; left: 8px; }
-.building-one > .front-wall > .middle > .column-5:after{ height: 19px; width: 4px; top: 6px; left: 8px; }
-.building-one > .front-wall > .middle > .column-3 > .relief-3{ top: -5px; left: -3px; }
-.building-one > .front-wall > .middle > .column-3 > .relief-3:before{ width: 15px; top: 3px; left: 7px; }
-.building-one > .front-wall > .middle > .column-4 > .relief-4{ top: -5px; left: -3px; }
-.building-one > .front-wall > .middle > .column-4 > .relief-4:before{ width: 15px; top: 3px; } 
-.building-one > .front-wall > .middle > .blanck > .relief-5{ top: 7px; left: -6px; border-radius: 5px 2px 1px 5px / 5px 2px 1px 5px; }
-.building-one > .front-wall > .middle > .blanck > .relief-5:before{ width: 20px; top: 3px; left: 7px; }
+.building-one > .front-wall > .middle .column-3:after{ height: 19px; width: 4px; top: 6px; left: 8px; }
+.building-one > .front-wall > .middle .column-4:after{ height: 19px; width: 4px; top: 6px; left: 8px; }
+.building-one > .front-wall > .middle .column-5:after{ height: 14px; width: 8px; top: 6px; left: 8px; }  
+/* - B.4 - Relief on top of column (.relief- = side, :before = front)*/
+.building-one > .front-wall > .middle .column-3 > .relief-3{ top: -5px; left: -3px; }
+.building-one > .front-wall > .middle .column-4 > .relief-4{ top: -5px; left: -3px; } 
+.building-one > .front-wall > .middle .column-5 > .relief-5{ top: -5px; left: -3px; } 
+.building-one > .front-wall > .middle .column-3 > .relief-3:before{ width: 15px; top: 3px; left: 7px; }
+.building-one > .front-wall > .middle .column-4 > .relief-4:before{ width: 15px; top: 3px; }  
+.building-one > .front-wall > .middle .column-5 > .relief-5:before{ width: 19px; top: 3px; }  
+/* -B.5 - Decor on top of column-5 */
+.building-one > .front-wall > .middle .column-5 > .decor-5-top{ top: 20px; width: 17px; left: 4px;}
+/* -- End of "Reliefs between arches" */
 .building-one > .front-wall > .middle > .columns > .sign-hook{
   top: 119px;
   left: 28px;
