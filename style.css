@@ -30,6 +30,11 @@
   --color-b1-back-panel1: #7d797d;
   --color-b1-back-panel2: #655f66;
   --color-b1-back-panel3: #5c5a63;
+  --color-b2-1: #dccfb5;
+  --color-b2-2: #dfbb8d;
+  --color-b2-3: #d2a66f;
+  --color-b2-4: #b09372;
+  --color-b2-border: #644b34;
   --color-light-bulb: #d7cbb6;
   --color-sideway1: #e5d9cd;
   --color-sideway2: #dfcdb7;
@@ -1082,25 +1087,59 @@ body{
   opacity: 0.4;
 }
 /* ***** Building two ***** */
+.building-two, .building-two:before, .building-two:after, .building-two > div{ position: absolute; }
 .building-two{
   height: 662px;
   width: 90px;
-  background: var(--color-b1-grey-wall3);
+  background: linear-gradient(
+    var(--color-b2-4) 0%,
+    var(--color-b2-3) 2%,
+    var(--color-b2-2) 7%,
+    var(--color-b2-1) 24%, var(--color-b2-2) 85%,
+    var(--color-b2-1) 100%
+  );
   border: 1px solid var(--color-line3);
-  position: absolute;
   top: 55px;
   right: 130px;
 }
-.building-two:before{
+.building-two:before{ 
   content: '';
   height: 115px;
   width: 220px;
-  background: var(--color-b1-grey-wall3);
+  background-image: radial-gradient(
+    farthest-corner at 40px 40px,
+    var(--color-b2-1) 0%, 
+    var(--color-b2-4) 100%
+  );
   border: 1px solid var(--color-line3);
-  position: absolute;
+  border-right: 4px double var(--color-line1);
   top: 52px;
   right: 90px;
   transform: skewY(-25deg);
+}
+.building-two:after{
+  content: '';
+  top: 21px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(0.25turn, var(--color-b2-border) 0%, var(--color-b2-4) 86%, var(--color-b2-4) 100%);
+  border-top: 1px solid var(--color-line1);
+  border-bottom: 2px double var(--color-b2-border);
+}
+.building-two > .windows{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  height: 473px;
+  padding: 55px 5px 10px 14px;
+  transform: skew(0deg, -6deg);
+}
+.building-two > .windows > .window{
+  height: 40px;
+  width: 7px;
+  border: 1px solid var(--color-line1);
+  border-bottom: 2px double var(--color-star-black);
+  border-radius: 1px;
 }
 /* ***** Building three ***** */
 .building-three{
