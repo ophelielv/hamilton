@@ -64,11 +64,18 @@ body{
 .building-one > .front-wall{
   width: 292px;
   height: 768px;
-  background: var(--color-b1-front-wall1);
+  background: linear-gradient(
+    var(--color-b1-front-wall1) 0%,
+    var(--color-b1-front-wall2) 7%, 
+    var(--color-b1-front-wall4) 11%, 
+    var(--color-b1-front-wall1) 20%,    
+    var(--color-b1-front-wall4) 100%  
+  );
   border: 1px solid var(--color-line3);
   position: absolute;
   top: 120px;
   left: 289px;
+  box-shadow: inset -2px -26px 20px 3px var(--color-star-black);
 }
 .building-one > .front-wall > .moldings > .molding{
   width: 288px;
