@@ -1366,7 +1366,7 @@ body{
 /* ***** Building two ***** */
 .building-two, .building-two:before, .building-two:after, .building-two > div{ position: absolute; }
 .building-two{
-  height: 662px;
+  height: 668px;
   width: 90px;
   background: linear-gradient(
     var(--color-b2-4) 0%,
@@ -1376,8 +1376,11 @@ body{
     var(--color-b2-1) 100%
   );
   border: 1px solid var(--color-line3);
+  border-right: 2px solid var(--color-line3);
+  border-radius: 2px;
   top: 55px;
   right: 130px;
+  box-shadow: inset -1px -2px 8px 1px var(--color-b2-border);
 }
 .building-two:before{ 
   content: '';
@@ -1402,21 +1405,38 @@ body{
   background: linear-gradient(0.25turn, var(--color-b2-border) 0%, var(--color-b2-4) 86%, var(--color-b2-4) 100%);
   border-top: 1px solid var(--color-line1);
   border-bottom: 2px double var(--color-b2-border);
+  box-shadow: 0px 2px 2px 0px var(--color-b1-back-panel2);
 }
 .building-two > .windows{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  height: 473px;
-  padding: 55px 5px 10px 14px;
-  transform: skew(0deg, -6deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 455px;
+  width: 70px;
+  padding: 58px 5px 10px 15px;
 }
-.building-two > .windows > .window{
+.building-two > .windows > .row{
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.building-two > .windows > .row-1{ transform: skew(0deg, -7deg); }
+.building-two > .windows > .row-2{ transform: skew(0deg, -10deg); }
+.building-two > .windows > .row-3{ transform: skew(0deg, -13deg); }
+.building-two > .windows > .row-4{ transform: skew(0deg, -15deg); }
+.building-two > .windows > .row-5{ transform: skew(0deg, -15deg); }
+.building-two > .windows > .row > .window{
   height: 40px;
-  width: 7px;
+  width: 6px;
   border: 1px solid var(--color-line1);
-  border-bottom: 2px double var(--color-star-black);
+  border-bottom: 3px double var(--color-star-black);
   border-radius: 1px;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  box-shadow: inset -1px -1px 2px 0px var(--color-line1);
 }
 /* ***** Building three ***** */
 .building-three{
