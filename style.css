@@ -14,7 +14,9 @@
   --color-b1-brick-wall2: #9c8d77;
   --color-b1-front-wall1: #e7ddcf;
   --color-b1-front-wall2: #a07b57;
+  --color-b1-front-wall2-transp: #a07b5769;
   --color-b1-front-wall3: #f3cc85;
+  --color-b1-front-wall3-transp: #f3cc8514;
   --color-b1-front-wall4: #988569;
   --color-b1-awning1: #e0d2c0;
   --color-b1-awning2: #c4af93;
@@ -69,18 +71,21 @@ body{
 .building-one > .front-wall{
   width: 292px;
   height: 768px;
-  background: linear-gradient(
-    var(--color-b1-front-wall1) 0%,
-    var(--color-b1-front-wall2) 7%, 
-    var(--color-b1-front-wall4) 11%, 
-    var(--color-b1-front-wall1) 20%,    
-    var(--color-b1-front-wall4) 100%  
+  background: radial-gradient(
+      farthest-corner at 180px 230px,
+      var(--color-b1-front-wall2-transp) 0%, var(--color-b1-front-wall3-transp) 100%
+    ),linear-gradient(
+      var(--color-b1-front-wall1) 0%,
+      var(--color-b1-front-wall2) 7%, 
+      var(--color-b1-front-wall4) 11%, 
+      var(--color-b1-front-wall1) 20%,    
+      var(--color-b1-front-wall4) 100%  
   );
   border: 1px solid var(--color-line3);
   position: absolute;
   top: 120px;
   left: 289px;
-  box-shadow: inset -2px -26px 20px 3px var(--color-star-black);
+  box-shadow: inset 0px -26px 10px 1px var(--color-star-black);
 }
 .building-one > .front-wall > .moldings > .molding{
   width: 288px;
@@ -1367,7 +1372,7 @@ body{
 .building-two, .building-two:before, .building-two:after, .building-two > div{ position: absolute; }
 .building-two{
   height: 668px;
-  width: 90px;
+  width: 91px;
   background: linear-gradient(
     var(--color-b2-4) 0%,
     var(--color-b2-3) 2%,
