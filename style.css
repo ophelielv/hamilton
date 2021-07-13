@@ -706,35 +706,39 @@ body{
   left: 12px;
   height: 88px;
   width: 166px;
-  background: radial-gradient( farthest-corner at 8px 75px, var(--background-gold1) 0%, var(--background-gold2) 55%, var(--background-gold3) 94%, var(--background-gold1) 100% );
-  box-shadow: inset -19px 4px 28px -9px var(--background-gold1);
   border-radius: 2px;
   border: 1px solid var(--color-line1);
 }
-.building-one > .front-wall > .middle > .light-panels > .panel1 > .star{
-  top: 42px;
-  left: 42px;
+.building-one > .front-wall > .middle > .light-panels > .panel-background,
+.building-two > .panel-background{
+  background: radial-gradient( farthest-corner at 8px 75px, var(--background-gold1) 0%, var(--background-gold2) 55%, var(--background-gold3) 94%, var(--background-gold1) 100% );
+  box-shadow: inset -19px 4px 28px -9px var(--background-gold1);
+}
+.building-one > .front-wall > .middle > .light-panels > .panel1 > .star-shape,
+.building-two > .panel > .star-shape{
+  position: absolute;
+  height: 0px; 
   width: 0px;
-  height: 0px;
   border-right: 45px solid transparent;
   border-bottom: 25px solid var(--color-star-black);
   border-left: 45px solid transparent;
   transform: rotate(29deg);
   border-radius: 4px;
 }
-.building-one > .front-wall > .middle > .light-panels > .panel1 > .star:before{
+.building-one > .front-wall > .middle > .light-panels > .panel1 > .star-shape:before,
+.building-two > .panel > .star-shape:before{
   content: '';
-  height: 0px;
+  height: 0px; 
   width: 0px;
   position: absolute;
-  top: 2px;
-  left: -49px;
   border-right: 45px solid transparent;
   border-bottom: 25px solid var(--color-star-black);
   border-left: 45px solid transparent;
   transform: rotate(-59deg);
   border-radius: 4px;
 }
+.building-one > .front-wall > .middle > .light-panels > .panel1 > .star{ top: 42px; left: 42px; }
+.building-one > .front-wall > .middle > .light-panels > .panel1 > .star:before{ top: 2px; left: -49px; }
 .building-one > .front-wall > .middle > .light-panels > .panel1 > .bulb-line-top{
   top: -14px;
   height: 13px;
@@ -1418,7 +1422,8 @@ body{
   opacity: 0.4;
 }
 /* ***** Building two ***** */
-.building-two, .building-two:before, .building-two:after, .building-two > div{ position: absolute; }
+.building-two, .building-two:before, .building-two:after, 
+.building-two > div, .building-two > div:before, .building-two > div:after{ position: absolute; }
 .building-two{
   height: 668px;
   width: 90px;
@@ -1461,6 +1466,39 @@ body{
   border-bottom: 2px double var(--color-b2-border);
   box-shadow: 0px 2px 2px 0px var(--color-b1-back-panel2);
 }
+.building-two > .sky-part{
+  top: 101px;
+  left: -245px;
+  background: var(--color-sky);
+  height: 8px;
+  width: 50px;
+  transform: skew(0deg, -25deg);
+  border-right: 1px solid var(--color-line3);
+  border-bottom: 1px solid var(--color-line3);
+}
+.building-two > .panel{
+  top: -40px;
+  left: -150px;
+  height: 90px;
+  width: 155px;
+  border-radius: 2px;
+  border: 1px solid var(--color-line1);
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-radius: 3px;
+  transform: skew(0deg, -25deg);
+}
+.building-two > .panel:before{
+  content: '';
+  height: 30px;
+  width: 34px;
+  top: 92px;
+  left: 75px;
+  border-left: 4px solid var(--color-line1);
+  border-right: 4px solid var(--color-line1);
+}
+.building-two > .panel > .star{ top: 42px; left: 36px; }
+.building-two > .panel > .star:before{ top: 2px; left: -49px; }
 .building-two > .windows{
   display: flex;
   flex-direction: column;
