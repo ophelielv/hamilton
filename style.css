@@ -1783,6 +1783,23 @@ body{
   box-shadow: inset 2px -1px 3px 0px var(--color-line1), inset 1px 1px 2px 0px var(--color-b3-2);
   transform: skew(0deg, -14deg);
 }
+.building-three > .clim{
+  bottom: 249px;
+  left: 125px;
+  border: 1px solid var(--color-line1);
+  width: 10px;
+  height: 16px;
+  background: var(--color-b3-3);
+  transform: skew(2deg, -25deg);
+}
+.building-three > .clim:after{
+  content: '';
+  height: 0px;
+  width: 10px;
+  border-bottom: 2px solid var(--color-line1);
+  top: 2px;
+  left: -1px;
+}
 /* ********************************* ROAD ********************************* */
 .road{ /* */ }
 /* ***** Tar ***** */
