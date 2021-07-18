@@ -49,6 +49,12 @@
   --color-line3: #5f5f5f;
   --color-star-grey: #2c2e31;
   --color-star-black: #222127;
+  --color-taxi-1: #efe1a0;
+  --color-taxi-2: #f7ba54;
+  --color-taxi-window: #dbd3ca;
+  --color-taxi-light-1: #c87e67;
+  --color-taxi-light-2: #f1815e;
+  --color-taxi-tire-border: #808080;
   --height-sideway-left-side: 45px;
   --border-width-side-wall: 2px;
   --height-front-poster: 480px;
@@ -1876,24 +1882,282 @@ body{
   left: -1px;
 }
 /* ********************************* ROAD ********************************* */
+.road div, .road div:after, .road div:before{ position: absolute; }
 /* ***** Tar ***** */
-.tar{
+.road > .tar{
   height: 0px;
   width: 0px;
-  position: absolute;
   bottom: 0;
   right: 0;
   border-bottom: 138px solid var(--color-tar);
   border-left: 500px solid transparent;
 }
-.line-middle-tar{
+.road > .tar > .line-middle-tar{
   height: 0px;
   width: 185px;
-  position: absolute;
   bottom: -90px;
   right: 2px;
   border-bottom: 3px outset white;
   transform: rotate(-15deg);
+}
+.road > .car{
+  height: 120px;
+  width: 208px;
+  bottom: 40px;
+  right: 75px;
+}
+.road > .car:before{
+  content: '';
+  height: 20px;
+  width: 171px;
+  bottom: 1px;
+  left: 22px;
+  background: linear-gradient(
+0.25turn
+, #2d2b2bdb, #2d2b2bf7);
+  border-radius: 13px 2px;
+  transform: skew(-62deg, -2deg);
+  box-shadow: 8px -2px 7px 0px #2d2b2b, -2px 8px 7px 0px #2d2b2b, -3px -6px 7px 4px #2f2b2bc7;
+} 
+.road > .car > .sign{
+  background: white;
+  border: 1px solid var(--color-line1);
+  left: 90px;
+  top: 9px;
+  height: 10px;
+  width: 38px;
+  border-radius: 4px 4px 2px 2px / 9px 11px 2px 2px;
+  transform: skew(0deg, 1deg);
+  box-shadow: inset 0px -1px 3px -1px var(--color-star-black);
+}
+.road > .car > .sign:after{
+  content: 'TAXI';
+  top: 0;
+  left: 7px;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.road > .car > .roof{
+  height: 4px;
+  width: 89px;
+  transform: skew(-77deg, 1deg);
+  bottom: 97px;
+  left: 67px;
+  background: var(--color-taxi-2);
+  border: 1px solid var(--color-line1);
+  border-radius: 10px 30px 5px 33px / 18px 30px 5px 14px;
+}
+.road > .car > .side-window-body{
+  transform: skew(-1deg, -14deg);
+  bottom: 70px;
+  left: 149px;
+  border-bottom: 32px solid var(--color-taxi-2);
+  border-right: 22px solid transparent;
+  height: 0;
+  width: 18px;
+}
+.road > .car > .windshield{
+  height: 25px;
+  width: 96px;
+  transform: skew(-16deg, 1deg);
+  bottom: 71px;
+  left: 47px;
+  background-image:
+    radial-gradient(farthest-corner at -10px -10px, white 0%, transparent 100%), 
+    linear-gradient(var(--color-taxi-window), lightseagreen)
+    ;
+    border: 1px solid var(--color-line1);
+    border-left-width: 2px;
+  border-right-width: 2px;
+  border-radius: 11px 5px 2px 2px / 30px 2px 3px 2px;
+}
+.road > .car > .capote{
+  height: 18px;
+  width: 110px;
+  transform: skew(-52deg, 1deg);
+  bottom: 51px;
+  left: 20px;
+  background-image: 
+    radial-gradient(farthest-corner at 15px 30px, var(--color-taxi-1) 0%, transparent 40%), 
+    linear-gradient(var(--color-taxi-2), var(--color-taxi-1))
+  ;
+  border: 1px solid var(--color-line1);
+  border-bottom-width: 2px;
+  border-right-width: 4px;
+  border-radius: 15px 5px 2px 2px / 20px 2px 3px 2px;
+}
+.road > .car > .bumper{
+  height: 40px;
+  width: 155px;
+  transform: skew(6deg, 1deg);
+  bottom: 10px;
+  left: 0px;
+  background-image: 
+    radial-gradient(farthest-corner at 45px 45px, var(--color-taxi-1) 0%, transparent 80%), 
+    linear-gradient(var(--color-taxi-2), var(--color-taxi-2))
+  ;
+  border: 1px solid var(--color-line1);
+  border-bottom-width: 2px;
+  border-radius: 14px 0px 45px 6px / 28px 0px 30px 8px;
+}
+.road > .car > .bumper:after{
+  content: '';
+  width: 122px;
+  height: 2px;
+  bottom: 17px;
+  left: 0px;
+  background: var(--color-line1);
+  transform: skew(0deg, -1deg);
+  border-bottom: 1px solid var(--color-star-black);
+  border-radius: 1px 1px 20px 20px;
+}
+.road > .car > .headlight{ 
+  background: linear-gradient(var(--color-taxi-light-1) 0%, var(--color-taxi-light-2) 100%);
+  border: 1px solid var(--color-line1); 
+}
+.road > .car > .headlight-1{ left: 2px; bottom: 34px; height: 12px; width: 25px; border-radius: 8px 6px 4px 5px; }
+.road > .car > .headlight-2{ left: 88px; bottom: 35px; height: 11px; width: 30px; border-radius: 6px 8px 4px 5px; }
+.road > .car > .licence-number{
+  background: white;
+  border: 1px solid var(--color-line1);
+  border-left: 2px double;
+  border-right: 2px double;
+  left: 33px;
+  bottom: 36px;
+  height: 9px;
+  width: 45px;
+  border-radius: 1px 1px 1px 1px;
+  transform: skew(-2deg, 0deg);
+  box-shadow: inset 0px -1px 4px -1px var(--color-star-black);
+}
+.road > .car > .licence-number:after{
+  content: '';
+  background: #ccc8c8;
+  border: 1px solid var(--color-line1);
+  border-left: 2px double;
+  border-right: 2px double;
+  left: 5px;
+  bottom: -24px;
+  height: 12px;
+  width: 27px;
+  border-radius: 4px 2px 4px 3px;
+  transform: skew(3deg, 1deg);
+  box-shadow: inset 0px -1px 4px -1px var(--color-star-black);
+}
+.road > .car > .tire{
+  background: var(--color-star-black);
+  border: 1px double var(--color-taxi-tire-border);
+  border-radius: 12px;
+  box-shadow: inset -2px -3px 3px -1px black;
+
+}
+.road > .car > .tire-1{ 
+  bottom: -1px;
+  left: 4px;
+  width: 28px;
+  height: 28px;
+ }
+.road > .car > .tire-2{ 
+  bottom: 2px;
+  left: 120px;
+  width: 26px;
+  height: 26px;
+}
+.road > .car > .tire-3{     
+  bottom: 19px;
+  left: 174px;
+  width: 25px;
+  height: 25px;
+}
+.road > .car > .side-window{
+  border-bottom: 31px solid lightseagreen;
+  border-left: 9px solid transparent;
+  border-right: 10px solid transparent;
+  border-radius: 0px 0px 0px 12px;
+  height: 0;
+  width: 10px;
+  bottom: 67px;
+  left: 141px;
+  transform: skew(0deg, -12deg);
+}
+.road > .car > .side{
+  left: 140px;
+  bottom: 24px;
+  background-image: 
+    radial-gradient(farthest-corner at 30px 15px, var(--color-taxi-1) 0%, transparent 45%), 
+    linear-gradient(var(--color-taxi-2), var(--color-taxi-2))
+  ;
+  border-bottom: 1px solid var(--color-line1);
+  height: 44px;
+  width: 49px;
+  transform: skew(0deg, -13deg);
+}
+.road > .car > .side:before{
+  content: '';
+  height: 0;
+  width: 20px;
+  bottom: -1px;
+  left: -17px;
+  border-top: 44px solid var(--color-taxi-2);
+  border-left: 12px solid transparent;
+  border-right: 0px solid transparent;
+  transform: skew(14deg, -29deg);
+  border-radius: 0px 0px 0px 30px / 0px 0px 0px 50px;
+}
+.road > .car > .side:after{
+  content: '';
+  height: 43px;
+  width: 14px;
+  bottom: -1px;
+  left: 49px;
+  border-top: 1px solid var(--color-line1);
+  border-right: 1px solid var(--color-line1);
+  border-bottom: 1px solid var(--color-line1);
+  border-radius: 0px 14px 16px 0px / 0px 25px 20px 0px;
+  background: var(--color-taxi-2);
+}
+.road > .car > .side > .door-line{
+  height: 38px;
+  width: 0px;
+  bottom: 2px;
+  left: 30px;
+  border-left: 1px solid var(--color-line1);
+  border-right: 1px double var(--color-line1);
+}
+.road > .car > .side > .window-line{
+  height: 0px;
+  width: 38px;
+  bottom: 42px;
+  left: 10px;
+  border-top: 1px solid var(--color-line1);
+  border-bottom: 1px double var(--color-line1);
+}
+.road > .car > .texts{
+  bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  left: 140px;
+  width: 62px;
+  height: 14px;
+  transform: skew(0deg, -12deg);
+}
+.road > .car > .texts > p{
+  bottom: 0px;
+  left: 0px;
+  margin: 0;
+  font-family: monospace;
+  font-size: 12px;
+}
+.road > .car > .texts > p.nyc{ padding-left: 8px; }
+.road > .car > .side-window-back{
+  border-bottom: 29px solid lightseagreen;
+  border-right: 11px solid transparent;
+  height: 0;
+  width: 5px;
+  bottom: 72px;
+  left: 167px;
+  transform: skew(20deg, -14deg);
 }
 /* ***** Sideway ***** */
 .road .left-side{
