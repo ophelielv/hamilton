@@ -1922,7 +1922,7 @@ body{
 .road > .car > .sign{
   background: white;
   border: 1px solid var(--color-line1);
-  left: 90px;
+  left: 88px;
   top: 9px;
   height: 10px;
   width: 38px;
@@ -1933,7 +1933,7 @@ body{
 .road > .car > .sign:after{
   content: 'TAXI';
   top: 0;
-  left: 7px;
+  left: 5px;
   font-family: monospace;
   font-size: 9px;
   letter-spacing: 2px;
@@ -1949,13 +1949,13 @@ body{
   border-radius: 10px 30px 5px 33px / 18px 30px 5px 14px;
 }
 .road > .car > .side-window-body{
-  transform: skew(-1deg, -14deg);
+  transform: skew(-1deg, -13deg);
   bottom: 70px;
   left: 149px;
   border-bottom: 32px solid var(--color-taxi-2);
   border-right: 22px solid transparent;
   height: 0;
-  width: 18px;
+  width: 20px;
 }
 .road > .car > .windshield{
   height: 25px;
@@ -2001,7 +2001,7 @@ body{
   border-bottom-width: 2px;
   border-radius: 14px 0px 45px 6px / 28px 0px 30px 8px;
 }
-.road > .car > .bumper:after{
+.road > .car > .bumper:before{
   content: '';
   width: 122px;
   height: 2px;
@@ -2012,11 +2012,20 @@ body{
   border-bottom: 1px solid var(--color-star-black);
   border-radius: 1px 1px 20px 20px;
 }
+.road > .car > .bumper-right-line{
+  width: 14px;
+  height: 40px;
+  top: 68px;
+  left: 115px;
+  background: transparent;
+  border-right: 1px solid var(--color-line1);
+  border-radius: 1px 13px 0px 0px / 1px 15px 1px 0px;
+}
 .road > .car > .headlight{ 
   background: linear-gradient(var(--color-taxi-light-1) 0%, var(--color-taxi-light-2) 100%);
   border: 1px solid var(--color-line1); 
 }
-.road > .car > .headlight-1{ left: 2px; bottom: 34px; height: 12px; width: 25px; border-radius: 8px 6px 4px 5px; }
+.road > .car > .headlight-1{ left: 3px; bottom: 35px; height: 11px; width: 25px; border-radius: 8px 6px 4px 5px; }
 .road > .car > .headlight-2{ left: 88px; bottom: 35px; height: 11px; width: 30px; border-radius: 6px 8px 4px 5px; }
 .road > .car > .licence-number{
   background: white;
@@ -2077,9 +2086,9 @@ body{
   border-radius: 0px 0px 0px 12px;
   height: 0;
   width: 10px;
-  bottom: 67px;
+  bottom: 66px;
   left: 141px;
-  transform: skew(0deg, -12deg);
+  transform: skew(0deg, -18deg);
 }
 .road > .car > .side{
   left: 140px;
@@ -2091,18 +2100,18 @@ body{
   border-bottom: 1px solid var(--color-line1);
   height: 44px;
   width: 49px;
-  transform: skew(0deg, -13deg);
+  transform: skew(0deg, -18deg);
 }
 .road > .car > .side:before{
   content: '';
   height: 0;
   width: 20px;
-  bottom: -1px;
+  bottom: 1px;
   left: -17px;
   border-top: 44px solid var(--color-taxi-2);
   border-left: 12px solid transparent;
   border-right: 0px solid transparent;
-  transform: skew(14deg, -29deg);
+  transform: skew(14deg, -24deg);
   border-radius: 0px 0px 0px 30px / 0px 0px 0px 50px;
 }
 .road > .car > .side:after{
@@ -2117,6 +2126,32 @@ body{
   border-radius: 0px 14px 16px 0px / 0px 25px 20px 0px;
   background: var(--color-taxi-2);
 }
+.road > .car > .side > .line-before-bumper{
+  height: 41px;
+  width: 1px;
+  top: 0px;
+  left: 1px;
+  border-right: 1px dotted var(--color-line1);
+  transform: rotate(0deg);
+}
+.road > .car > .side > .line-right-of-window{
+  height: 40px;
+  width: 1px;
+  top: -36px;
+  left: 37px;
+  border-right: 1px solid var(--color-line1);
+  transform: rotate(-34deg);
+  border-radius: 9px;
+}
+.road > .car > .side > .line-under-mirror{
+  height: 4px;
+  width: 10px;
+  bottom: 45px;
+  left: 2px;
+  border-bottom: 1px solid var(--color-line1);
+  transform: rotate(35deg);
+  box-shadow: inset 9px -12px 0px 6px lightseagreen;
+}
 .road > .car > .side > .door-line{
   height: 38px;
   width: 0px;
@@ -2127,11 +2162,22 @@ body{
 }
 .road > .car > .side > .window-line{
   height: 0px;
-  width: 38px;
+  width: 39px;
   bottom: 42px;
   left: 10px;
   border-top: 1px solid var(--color-line1);
   border-bottom: 1px double var(--color-line1);
+}
+.road > .car > .mirror{
+  background: var(--color-taxi-1);
+  border: 1px solid var(--color-line1);
+  left: 144px;
+  top: 46px;
+  height: 8px;
+  width: 11px;
+  border-radius: 4px 20px 20px 3px / 9px 11px 10px 10px;
+  box-shadow: inset 0px -1px 3px -1px var(--color-star-black);
+  transform: skew(0deg, -3deg);
 }
 .road > .car > .texts{
   bottom: 45px;
