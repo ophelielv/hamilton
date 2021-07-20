@@ -55,6 +55,10 @@
   --color-taxi-light-1: #c87e67;
   --color-taxi-light-2: #f1815e;
   --color-taxi-tire-border: #808080;
+  --color-flyer-title-yellow1: #ede58b;
+  --color-flyer-title-yellow2: #e6cd49;
+  --color-flyer-title-yellow3: #e6c02c;
+  --color-flyer-white: #ebe1da;
   --height-sideway-left-side: 45px;
   --border-width-side-wall: 2px;
   --height-front-poster: 480px;
@@ -2274,7 +2278,7 @@ body{
   opacity: 0.7;
 }
 /* ********************************* FLYER ********************************* */
-.flyer, .flyer div, .flyer div:after, .flyer div:before{ position: absolute; }
+.flyer, .flyer div, .flyer div:after, .flyer div:before/*, .flyer p*/{ position: absolute; }
 .img-flyer{
   position: absolute;
   bottom: -10px;
@@ -2297,11 +2301,11 @@ body{
 .flyer > .paper{
   border: 5px double var(--color-line3);
   height: 500px;
-  width: 320px;
+  width: 310px;
   border-radius: 6px;
   top: 42px;
   left: 95px;
-  background: white;
+  background: linear-gradient(white 0%, var(--color-flyer-white) 60%);
   transform: rotate(-26deg);
   /* opacity: 0.5; */
 }
@@ -2312,8 +2316,25 @@ body{
   border-radius: 6px;
   top: 10px;
   left: 5px;
-  background: yellow;
+  background: linear-gradient(
+    var(--color-flyer-title-yellow1), 
+    var(--color-flyer-title-yellow2), 
+    var(--color-flyer-title-yellow3)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.flyer > .paper > .title > p{
+  text-transform: uppercase;
+  font-family: monospace;
+  color: var(--color-star-black);
+  margin: 0;
+  text-shadow: 3px 4px 11px var(--color-star-grey);
+}
+.flyer > .paper > .title > p.playbill{ font-size: 35px; letter-spacing: 10px; }
+.flyer > .paper > .title > p.theatre{ font-size: 14px; letter-spacing: 2px; }
 .flyer > .paper > .content{
   height: 350px;
   width: 285px;
