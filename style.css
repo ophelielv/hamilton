@@ -1,4 +1,4 @@
-:root{
+:root{ 
   --ham-bg-gradient: #fcbf31;
   --background-gold1: #af6d2f;
   --background-gold2: #f09931;
@@ -108,14 +108,12 @@ body{
   left: 42px;
   height: 20px;
   width: 250px;
-  /* background: palevioletred; */
   display: flex;
   justify-content: space-between;
 }
 .building-one > .front-wall > .urns > .urn-container{
   width: 10px;
   height: 100%;
-  /* background: cornflowerblue; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -1323,9 +1321,9 @@ body{
   overflow: hidden;
   position: absolute;
 }
-.building-one--entrance > .awning > .front-awning > .round1 > .circle{ height: 21px; width: 57px; top: 0; /*box-shadow: -44px 11px 0px -10px var(--color-line1);*/}
-.building-one--entrance > .awning > .front-awning > .round2 > .circle{ height: 12px; width: 60px; top: -1px; /*box-shadow: -44px 11px 0px -10px var(--color-line1);*/}
-.building-one--entrance > .awning > .front-awning > .round3 > .circle{ height: 13px; width: 54px; top: -2px; /*box-shadow: -44px 11px 0px -10px var(--color-line1);*/}
+.building-one--entrance > .awning > .front-awning > .round1 > .circle{ height: 21px; width: 57px; top: 0; }
+.building-one--entrance > .awning > .front-awning > .round2 > .circle{ height: 12px; width: 60px; top: -1px; }
+.building-one--entrance > .awning > .front-awning > .round3 > .circle{ height: 13px; width: 54px; top: -2px; }
 .building-one--entrance > .awning > .front-awning .circle:after{ 
   content: ''; 
   height: 55px; 
