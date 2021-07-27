@@ -1,9 +1,8 @@
 :root{ 
   --ham-bg-gradient: #fcbf31;
-  --background-gold1: #af6d2f;
-  --background-gold2: #f09931;
-  --background-gold2: #ffc54f;
-  --background-gold3: #fcda4b;
+  --color-background-gold1: #af6d2f;
+  --color-background-gold2: #ffc54f;
+  --color-background-gold3: #fcda4b;
   --color-brick: #b9a183;
   --color-sky: #a3d8df;
   --color-tar: #82828a;
@@ -726,8 +725,8 @@ body{
 }
 .building-one > .front-wall > .middle > .light-panels > .panel-background,
 .building-two > .panel-background{
-  background: radial-gradient( farthest-corner at 8px 75px, var(--background-gold1) 0%, var(--background-gold2) 55%, var(--background-gold3) 94%, var(--background-gold1) 100% );
-  box-shadow: inset -19px 4px 28px -9px var(--background-gold1);
+  background: radial-gradient( farthest-corner at 8px 75px, var(--color-background-gold1) 0%, var(--color-background-gold2) 55%, var(--color-background-gold3) 94%, var(--color-background-gold1) 100% );
+  box-shadow: inset -19px 4px 28px -9px var(--color-background-gold1);
 }
 .building-one > .front-wall > .middle > .light-panels > .panel1 > .star-shape,
 .building-two > .panel > .star-shape{
@@ -897,6 +896,7 @@ body{
   width: 9px;
   border-radius: 10px;
   position: unset;
+  background: white; 
 }
 .building-one > .front-wall > .middle > .light-panels > .panel2{
   top: 118px;
@@ -983,7 +983,6 @@ body{
 .building-one > .side-wall .poster-container > .iron-structure > .vertical-3{ left: 116px; }
 .building-one > .side-wall .poster-container > .iron-structure > .vertical-4{ left: 181px; }
 .building-one > .side-wall .poster-container > .iron-structure > .vertical-5{ left: 245px; }
-
 /* Poster */
 .building-one > .side-wall .poster-container > .poster{
   margin: 10px 20px 20px 0px;
@@ -999,12 +998,12 @@ body{
   border-radius: 4px;
   background: radial-gradient(
     farthest-corner at 40px 265px, 
-    var(--background-gold1) 0%, 
-    var(--background-gold2) 57%,
-    var(--background-gold3) 94%,
-    var(--background-gold1) 100%
+    var(--color-background-gold1) 0%, 
+    var(--color-background-gold2) 57%,
+    var(--color-background-gold3) 94%,
+    var(--color-background-gold1) 100%
   );
-  box-shadow: inset -23px -8px 28px -9px var(--background-gold1);
+  box-shadow: inset -23px -8px 28px -9px var(--color-background-gold1);
 }
 .building-one > .side-wall .poster > .star{ top: 242px; left: 12px; }
 .poster > .star{
@@ -1163,6 +1162,18 @@ body{
   box-shadow: 0px 2px 1px 0px var(--color-star-black), 0px 0px 2px 1px var(--color-star-black);
   transform: rotate(-8deg);
 }
+.poster > .alexander > .head:before{
+  content: '';
+  height: 6px;
+  width: 12px;
+  border-radius: 6px 15px 4px 4px / 4px 9px 6px 10px;
+  position: absolute;
+  top: 8px;
+  left: 3px;
+  background: var(--color-star-black);
+  box-shadow: 0px 2px 1px 0px var(--color-star-black), 0px 0px 2px 1px var(--color-star-black);
+  transform: rotate(-8deg);
+}
 .poster > .alexander > .left-arm{
   background: var(--color-star-black);
   height: 58px;
@@ -1239,7 +1250,6 @@ body{
 }
 .building-one--entrance > .awning .bulb{
   border: 1px solid var(--color-line1);
-  /* background: radial-gradient(farthest-corner at -2px 6px, white 60%, var(--background-gold3) 66%); */
   border-radius: 6px;
   position: unset;
 }
@@ -1909,11 +1919,6 @@ body{
   width: 208px;
   bottom: 130px;
   right: -220px;
-  /* display: none;
-  height: 120px;
-  width: 208px;
-  bottom: 40px;
-  right: 75px; */
 }
 .road > .car:before{
   content: '';
@@ -1921,9 +1926,7 @@ body{
   width: 171px;
   bottom: 1px;
   left: 22px;
-  background: linear-gradient(
-0.25turn
-, #2d2b2bdb, #2d2b2bf7);
+  background: linear-gradient(0.25turn, #2d2b2bdb, #2d2b2bf7);
   border-radius: 13px 2px;
   transform: skew(-62deg, -2deg);
   box-shadow: 8px -2px 7px 0px #2d2b2b, -2px 8px 7px 0px #2d2b2b, -3px -6px 7px 4px #2f2b2bc7;
@@ -1975,9 +1978,9 @@ body{
   background-image:
     radial-gradient(farthest-corner at -10px -10px, white 0%, transparent 100%), 
     linear-gradient(var(--color-taxi-window), lightseagreen)
-    ;
-    border: 1px solid var(--color-line1);
-    border-left-width: 2px;
+  ;
+  border: 1px solid var(--color-line1);
+  border-left-width: 2px;
   border-right-width: 2px;
   border-radius: 11px 5px 2px 2px / 30px 2px 3px 2px;
 }
@@ -2284,12 +2287,12 @@ body{
 /* ********************************* FLYER ********************************* */
 .flyer, .flyer div, .flyer div:after, .flyer div:before{ position: absolute; }
 .flyer{
-  display: none;
   z-index: 1;
   left: 80px;
   bottom: 0;
   height: 635px;
   width: 515px;
+  visibility: hidden;
 }
 /* ***** Paper ***** */
 .flyer > .paper{
@@ -2343,9 +2346,9 @@ body{
 .flyer > .paper > .content > .poster > p.hamilton{ top: 183px; left: 88px; }
 /* ***** Hand ***** */
 .flyer > .wrist{
-  bottom: 0;
-  left: 87px;
-  height: 280px;
+  bottom: -30px;
+  left: 82px;
+  height: 320px;
   width: 50px;
   border: 4px double var(--color-line1);
   background: var(--color-hand1);
@@ -2400,7 +2403,7 @@ body{
     background: white; 
   }
   12%, 24%, 36%, 48%, 100%{
-    background: radial-gradient(farthest-corner at 3px 8px, white 25%, var(--background-gold3) 25%);  
+    background: radial-gradient(farthest-corner at 3px 8px, white 25%, var(--color-background-gold3) 25%);  
   } 
 }
 @keyframes light-row-shadow{ 
@@ -2408,7 +2411,7 @@ body{
     box-shadow: none;
   }
   12%, 24%, 36%, 48%, 100%{
-    box-shadow: 7px 17px 40px 7px var(--background-gold3);
+    box-shadow: 7px 17px 40px 7px var(--color-background-gold3);
   }
 } 
 .building-one > .front-wall > .middle > .light-panels div[class^="bulb-line-"] > .bulb,
@@ -2422,7 +2425,8 @@ body{
   animation-fill-mode: both;
   animation-play-state: running; 
 }
-.building-one--entrance > .awning .bulb, .building-one > .front-wall > .middle .arch > .lamp{
+.building-one--entrance > .awning .bulb, .building-one > .front-wall > .middle .arch > .lamp,
+.building-two > .panel > .lamps > .lamp:before{
   animation-name: enlighten-panel-bulbs, light-row-shadow;
   animation-duration: 5s, 5s;
   animation-timing-function: ease-in-out, ease-in-out;
@@ -2432,26 +2436,38 @@ body{
   animation-fill-mode: both;
   animation-play-state: running; 
 }
-/* ***** 2. Four cars  ***** */
+/* ***** 2. Moving cars  ***** */
 @keyframes moving-car{
-  0%{ 
-    transform: none; 
-  }
-  50%{ 
-    transform: translate(-820px, 250px); 
-  } 
-  100%{ 
-    transform: translate(-820px, 250px); 
-  } 
+  0%{ transform: none; }
+  50%, 100%{ transform: translate(-820px, 250px); } 
 }  
 .road > .car{
   animation-name: moving-car;
-  animation-duration: 6s; 
+  animation-duration: 6.5s; 
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: none;
   animation-play-state: running;
 }
-.road > .car-1{ animation-delay: 3s, 7s; }
-.road > .car-2{ animation-delay: 4s, 8s;} 
+.road > .car-1{ animation-delay: 4s, 8s; }
+.road > .car-2{ animation-delay: 5s, 9s;} 
+/* ***** 3. Flyer  ***** */
+@keyframes moving-flyer{
+  0%{ visibility: visible; }
+  10%, 20%, 30%, 40%{ transform: rotate3d(0, 0, 1, -10deg); }
+  15%, 25%, 35%, 45%{ transform: rotate3d(0, 0, 1, 10deg); }
+  50%{ visibility: hidden; }
+  100%{ visibility: hidden; }
+}
+.flyer{
+  animation-name: moving-flyer;
+  animation-duration: 8s; 
+  animation-timing-function: linear;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  transform-origin: 0px 635px;
+}
