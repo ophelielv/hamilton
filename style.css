@@ -74,7 +74,7 @@ body{
   height: 800px;
   background-color: var(--color-sky);
   position: relative;
-  overflow: hidden;
+  overflow: hidden;   
 }
 /* ********************************* BUILDINGS ********************************* */
 .buildings .perspective{
@@ -893,7 +893,6 @@ body{
 }
 .building-one > .front-wall > .middle > .light-panels div[class^="bulb-line-"] > .bulb{
   border: 2px solid var(--color-line1);
-  background: radial-gradient(farthest-corner at 3px 8px, white 25%, var(--background-gold3) 65%);
   height: 9px;
   width: 9px;
   border-radius: 10px;
@@ -1240,7 +1239,7 @@ body{
 }
 .building-one--entrance > .awning .bulb{
   border: 1px solid var(--color-line1);
-  background: radial-gradient(farthest-corner at -2px 6px, white 60%, var(--background-gold3) 66%);
+  /* background: radial-gradient(farthest-corner at -2px 6px, white 60%, var(--background-gold3) 66%); */
   border-radius: 6px;
   position: unset;
 }
@@ -1908,8 +1907,13 @@ body{
 .road > .car{
   height: 120px;
   width: 208px;
+  bottom: 130px;
+  right: -220px;
+  /* display: none;
+  height: 120px;
+  width: 208px;
   bottom: 40px;
-  right: 75px;
+  right: 75px; */
 }
 .road > .car:before{
   content: '';
@@ -2280,6 +2284,7 @@ body{
 /* ********************************* FLYER ********************************* */
 .flyer, .flyer div, .flyer div:after, .flyer div:before{ position: absolute; }
 .flyer{
+  display: none;
   z-index: 1;
   left: 80px;
   bottom: 0;
@@ -2387,3 +2392,66 @@ body{
   border-radius: 1px 1px 6px 1px / 1px 1px 20px 1px;
   border-bottom-width: 0;
 }
+/* ********************************* ANIMATIONS ********************************* */
+/* ***** 1. Blinking lamps ***** */
+/* 4 blinks in 2s, followed by 2s yellow non-blinking light */
+@keyframes enlighten-panel-bulbs{ 
+  6%, 18%, 30%, 42%{
+    background: white; 
+  }
+  12%, 24%, 36%, 48%, 100%{
+    background: radial-gradient(farthest-corner at 3px 8px, white 25%, var(--background-gold3) 25%);  
+  } 
+}
+@keyframes light-row-shadow{ 
+  6%, 18%, 30%, 42%{
+    box-shadow: none;
+  }
+  12%, 24%, 36%, 48%, 100%{
+    box-shadow: 7px 17px 40px 7px var(--background-gold3);
+  }
+} 
+.building-one > .front-wall > .middle > .light-panels div[class^="bulb-line-"] > .bulb,
+.building-one > .front-wall > .middle .arch > .lamp{
+  animation-name: enlighten-panel-bulbs;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  animation-play-state: running; 
+}
+.building-one--entrance > .awning .bulb, .building-one > .front-wall > .middle .arch > .lamp{
+  animation-name: enlighten-panel-bulbs, light-row-shadow;
+  animation-duration: 5s, 5s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-delay: 0s, 0s;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  animation-play-state: running; 
+}
+/* ***** 2. Four cars  ***** */
+@keyframes moving-car{
+  0%{ 
+    transform: none; 
+  }
+  50%{ 
+    transform: translate(-820px, 250px); 
+  } 
+  100%{ 
+    transform: translate(-820px, 250px); 
+  } 
+}  
+.road > .car{
+  animation-name: moving-car;
+  animation-duration: 6s; 
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+.road > .car-1{ animation-delay: 3s, 7s; }
+.road > .car-2{ animation-delay: 4s, 8s;} 
